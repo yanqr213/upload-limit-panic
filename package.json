@@ -7,6 +7,7 @@
     "start": "node scripts/server.cjs",
     "build": "node scripts/build.cjs",
     "verify": "node scripts/verify.cjs",
+    "verify:analytics": "node scripts/verify-analytics.cjs",
     "smoke": "node scripts/smoke.cjs",
     "submission": "node scripts/submission.cjs",
     "demo:video": "node scripts/demo-video.cjs",

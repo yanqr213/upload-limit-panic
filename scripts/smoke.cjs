@@ -101,6 +101,16 @@ function createServer(publicDir, port) {
   };
   return http.createServer((request, response) => {
     const url = new URL(request.url, `http://127.0.0.1:${port}`);
+    if (url.pathname === "/api/event") {
+      response.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      response.end(JSON.stringify({ ok: true, local: true }));
+      return;
+    }
+    if (url.pathname === "/api/metrics") {
+      response.writeHead(200, { "Content-Type": "application/json; charset=utf-8" });
+      response.end(JSON.stringify({ ok: true, local: true, totals: {}, todayTotals: {}, funnel: {} }));
+      return;
+    }
     const cleanPath = decodeURIComponent(url.pathname).replace(/^\/+/, "") || "index.html";
     const target = path.normalize(path.join(publicDir, cleanPath));
     if (!target.startsWith(publicDir)) {

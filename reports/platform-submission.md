@@ -1,6 +1,6 @@
 # Upload Limit Panic Platform Submission
 
-Generated: 2026-06-01T22:16:24.610Z
+Generated: 2026-06-01T22:27:48.582Z
 
 ## Game
 
@@ -11,6 +11,8 @@ Sort files into Compress, Convert, Send, or Trash before the upload queue bursts
 Upload Limit Panic is a fast HTML5 sorting game about everyday file-upload problems. Every round throws a new file into the queue: oversized PDFs, wrong-format images, clean files, and duplicates. The player has 60 seconds to sort each file into Compress, Convert, Send, or Trash while the queue pressure rises. It is readable in seconds, works with keyboard or touch controls, and is built as a standalone browser game for zero-domain platform validation.
 
 Live URL: https://upload-limit-panic.pages.dev/
+
+Metrics URL: https://upload-limit-panic.pages.dev/api/metrics
 
 Repository: https://github.com/yanqr213/upload-limit-panic
 

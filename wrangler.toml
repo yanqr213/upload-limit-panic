@@ -1,0 +1,7 @@
+name = "upload-limit-panic"
+pages_build_output_dir = "dist"
+compatibility_date = "2026-06-01"
+
+[[kv_namespaces]]
+binding = "ULP_EVENTS"
+id = "035a70a4e763489c9fb230defca2494f"

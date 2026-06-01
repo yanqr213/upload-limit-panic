@@ -54,7 +54,54 @@
     } catch {
       // Local analytics are best-effort for platform review builds.
     }
+    sendRemoteEvent(eventName, payload);
     window.dispatchEvent(new CustomEvent("ulp:event", { detail: event }));
+  }
+
+  function sendRemoteEvent(eventName, payload = {}) {
+    const body = JSON.stringify({
+      name: eventName,
+      source: trafficSource(),
+      path: window.location.pathname || "/",
+      detail: safeDetail(payload),
+    });
+    if (navigator.sendBeacon) {
+      navigator.sendBeacon("/api/event", new Blob([body], { type: "application/json" }));
+      return;
+    }
+    fetch("/api/event", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body,
+      keepalive: true,
+    }).catch(() => {});
+  }
+
+  function trafficSource() {
+    const params = new URLSearchParams(window.location.search);
+    const utm = params.get("utm_source");
+    if (utm) return normalizeSource(utm);
+    const referrer = document.referrer || "";
+    if (!referrer) return "direct";
+    if (referrer.includes("github.com")) return "github";
+    if (referrer.includes("printable-tools-lab")) return "printable-tools-lab";
+    if (referrer.includes("crazygames")) return "crazygames";
+    if (referrer.includes("itch.io")) return "itch";
+    return "referral";
+  }
+
+  function normalizeSource(value) {
+    const source = String(value || "").toLowerCase().replace(/[^a-z0-9_-]+/g, "-").replace(/^-+|-+$/g, "");
+    if (["github", "printable-tools-lab", "crazygames", "itch", "community", "short-video"].includes(source)) return source;
+    return source ? "referral" : "direct";
+  }
+
+  function safeDetail(payload) {
+    const output = {};
+    for (const [key, value] of Object.entries(payload || {})) {
+      if (["target", "lane", "practice", "score", "sorted", "mistakes"].includes(key)) output[key] = value;
+    }
+    return output;
   }
 
   async function gameplayStart() {

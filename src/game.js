@@ -150,6 +150,7 @@
   function chooseLane(laneId) {
     if (!state.running || state.paused || state.over || !state.current) return;
     const correct = state.current.target === laneId;
+    window.UploadLimitPlatform.track("lane_choice", { lane: laneId, target: state.current.target });
     pulseLane(laneId);
     if (correct) {
       const gained = Math.round((110 + Math.max(0, 100 - state.queuePressure)) * state.combo);
@@ -159,12 +160,14 @@
       state.combo = Math.min(8, 1 + Math.floor(state.streak / 4));
       state.queuePressure = Math.max(0, state.queuePressure - 13 - state.combo);
       burst(state.current, lanes.find((lane) => lane.id === laneId)?.color || "#0f8b8d", `+${gained}`);
+      window.UploadLimitPlatform.track("correct_sort", { lane: laneId, target: state.current.target });
     } else {
       state.mistakes += 1;
       state.streak = 0;
       state.combo = 1;
       state.queuePressure = Math.min(100, state.queuePressure + 18);
       burst(state.current, "#e66a5d", "Wrong");
+      window.UploadLimitPlatform.track("wrong_sort", { lane: laneId, target: state.current.target });
     }
     state.current = makeFile();
     updateHud();
@@ -452,6 +455,7 @@
   restartButton.addEventListener("click", () => reset(false));
   hintButton.addEventListener("click", useHint);
   laneButtons.forEach((button) => button.addEventListener("click", () => chooseLane(button.dataset.lane)));
+  document.querySelector(".bottom-strip a")?.addEventListener("click", () => window.UploadLimitPlatform.track("cta_click", { target: "free-pdf-tools" }));
   window.addEventListener("keydown", (event) => {
     const lane = lanes.find((item) => item.key === event.key);
     if (lane) chooseLane(lane.id);

@@ -22,6 +22,7 @@ const submission = {
     language: "English",
     contentRating: "Everyone / no violence / no gambling / no personal data collection",
     liveUrl: "https://upload-limit-panic.pages.dev/",
+    metricsUrl: "https://upload-limit-panic.pages.dev/api/metrics",
     repository: "https://github.com/yanqr213/upload-limit-panic",
   },
   monetization: {
@@ -68,6 +69,7 @@ const submission = {
   validationGates: [
     "Build, verify, smoke, package, and submission scripts pass locally.",
     "Production Cloudflare Pages URL returns 200.",
+    "Production /api/event accepts anonymous aggregate events and /api/metrics returns funnel counts.",
     "ZIP contains index.html at archive root.",
     "Desktop and mobile screenshots are nonblank.",
     "Demo video exists and is under 25 MB.",
@@ -94,6 +96,8 @@ function renderMarkdown(data) {
     data.game.longDescription,
     "",
     `Live URL: ${data.game.liveUrl}`,
+    "",
+    `Metrics URL: ${data.game.metricsUrl}`,
     "",
     `Repository: ${data.game.repository}`,
     "",

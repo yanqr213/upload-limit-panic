@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-01T22:16:23.921Z",
+  "generatedAt": "2026-06-01T22:26:18.513Z",
   "state": {
-    "score": "318",
-    "currentFile": "tax_receipt_19.docx",
+    "score": "264",
+    "currentFile": "shipping_slip_32.csv",
     "modalHidden": true,
-    "eventCount": 3,
+    "eventCount": 11,
     "colored": 1600
   },
   "browserEvents": [],

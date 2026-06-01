@@ -25,6 +25,7 @@ Run:
 npm.cmd install
 npm.cmd run build
 npm.cmd run verify
+npm.cmd run verify:analytics
 npm.cmd run smoke
 npm.cmd run demo:video
 npm.cmd run submission
@@ -34,6 +35,7 @@ npm.cmd run package
 Outputs:
 
 - `dist/`: static HTML5 game.
+- `reports/analytics-verification.json`: anonymous event and metrics verification.
 - `reports/desktop-smoke.png`: desktop visual check.
 - `reports/mobile-smoke.png`: mobile visual check.
 - `reports/upload-limit-panic-demo.mp4`: short gameplay demo for platform review.
@@ -45,11 +47,15 @@ Outputs:
 ## Monetization Path
 
 1. Submit the HTML5 build to a platform such as CrazyGames or itch.io.
-2. Use the platform review stage to test retention and feedback.
+2. Use the platform review stage and the anonymous `/api/metrics` funnel to test retention and feedback.
 3. Add the platform SDK only when the platform allows ads.
 4. Use rewarded ads only for optional hints, retry, revive, or bonus time.
 5. Do not block basic gameplay behind ad viewing.
 6. Do not ask users to click ads or watch ads for external rewards.
+
+## Anonymous Metrics
+
+The hosted Pages build records only aggregate counts in Cloudflare KV: page views, run starts, run ends, lane choices, correct sorts, wrong sorts, hint usage, and CTA clicks. It does not store uploaded files, names, IP addresses, emails, or per-user profiles.
 
 ## Account Checklist
 

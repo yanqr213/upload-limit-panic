@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T22:16:24.610Z",
+  "generatedAt": "2026-06-01T22:27:48.582Z",
   "game": {
     "title": "Upload Limit Panic",
     "shortDescription": "Sort files into Compress, Convert, Send, or Trash before the upload queue bursts.",
@@ -32,6 +32,7 @@
     "language": "English",
     "contentRating": "Everyone / no violence / no gambling / no personal data collection",
     "liveUrl": "https://upload-limit-panic.pages.dev/",
+    "metricsUrl": "https://upload-limit-panic.pages.dev/api/metrics",
     "repository": "https://github.com/yanqr213/upload-limit-panic"
   },
   "monetization": {
@@ -75,6 +76,7 @@
   "validationGates": [
     "Build, verify, smoke, package, and submission scripts pass locally.",
     "Production Cloudflare Pages URL returns 200.",
+    "Production /api/event accepts anonymous aggregate events and /api/metrics returns funnel counts.",
     "ZIP contains index.html at archive root.",
     "Desktop and mobile screenshots are nonblank.",
     "Demo video exists and is under 25 MB."
