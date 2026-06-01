@@ -1,0 +1,29 @@
+{
+  "generatedAt": "2026-06-01T23:12:10.301Z",
+  "assets": [
+    {
+      "name": "upload-limit-panic-icon-512.png",
+      "label": "512x512 platform icon",
+      "path": "reports\\upload-limit-panic-icon-512.png",
+      "width": 512,
+      "height": 512,
+      "bytes": 8265
+    },
+    {
+      "name": "upload-limit-panic-cover-16x9.png",
+      "label": "1280x720 platform cover",
+      "path": "reports\\upload-limit-panic-cover-16x9.png",
+      "width": 1280,
+      "height": 720,
+      "bytes": 54501
+    },
+    {
+      "name": "upload-limit-panic-social-card.png",
+      "label": "1200x630 social preview card",
+      "path": "reports\\upload-limit-panic-social-card.png",
+      "width": 1200,
+      "height": 630,
+      "bytes": 49847
+    }
+  ]
+}

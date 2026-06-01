@@ -46,6 +46,9 @@ const submission = {
   assets: {
     desktopScreenshot: "reports/desktop-smoke.png",
     mobileScreenshot: "reports/mobile-smoke.png",
+    platformIcon: "reports/upload-limit-panic-icon-512.png",
+    platformCover: "reports/upload-limit-panic-cover-16x9.png",
+    socialCard: "reports/upload-limit-panic-social-card.png",
     demoVideo: "reports/upload-limit-panic-demo.mp4",
     releaseDemoVideo: "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
     icon: "src/icon.svg",

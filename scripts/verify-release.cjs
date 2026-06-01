@@ -24,6 +24,8 @@ async function main() {
     if (!releaseHtml.includes("Upload Limit Panic Platform Submission Pack")) failures.push("Release page missing title.");
     if (!releaseHtml.includes("upload-limit-panic-html5.zip")) failures.push("Release page missing ZIP asset.");
     if (!releaseHtml.includes("upload-limit-panic-demo.mp4")) failures.push("Release page missing demo MP4 asset.");
+    if (!releaseHtml.includes("upload-limit-panic-cover-16x9.png")) failures.push("Release page missing cover image asset.");
+    if (!releaseHtml.includes("upload-limit-panic-icon-512.png")) failures.push("Release page missing icon asset.");
   }
 
   for (const asset of report.assets || []) {

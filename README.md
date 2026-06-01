@@ -28,6 +28,7 @@ npm.cmd run verify
 npm.cmd run verify:analytics
 npm.cmd run verify:crazygames
 npm.cmd run smoke
+npm.cmd run assets:platform
 npm.cmd run demo:video
 npm.cmd run submission
 npm.cmd run package
@@ -38,6 +39,9 @@ Outputs:
 - `dist/`: static HTML5 game.
 - `reports/analytics-verification.json`: anonymous event and metrics verification.
 - `reports/crazygames-verification.json`: CrazyGames Basic Launch readiness checks.
+- `reports/upload-limit-panic-icon-512.png`: platform icon.
+- `reports/upload-limit-panic-cover-16x9.png`: platform cover image.
+- `reports/upload-limit-panic-social-card.png`: social preview card.
 - `reports/desktop-smoke.png`: desktop visual check.
 - `reports/mobile-smoke.png`: mobile visual check.
 - `reports/upload-limit-panic-demo.mp4`: short gameplay demo for platform review.

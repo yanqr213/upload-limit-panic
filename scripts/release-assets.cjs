@@ -12,6 +12,11 @@ const assets = [
   { file: "reports/upload-limit-panic-demo.mp4", label: "8-second vertical gameplay demo MP4" },
   { file: "reports/platform-submission.md", label: "copy-ready platform submission notes" },
   { file: "reports/platform-submission.json", label: "machine-readable platform submission fields" },
+  { file: "reports/upload-limit-panic-icon-512.png", label: "512x512 platform icon" },
+  { file: "reports/upload-limit-panic-cover-16x9.png", label: "1280x720 platform cover image" },
+  { file: "reports/upload-limit-panic-social-card.png", label: "1200x630 social preview card" },
+  { file: "reports/platform-assets.json", label: "platform image asset manifest" },
+  { file: "reports/crazygames-verification.json", label: "CrazyGames Basic Launch readiness checks" },
   { file: "reports/analytics-verification.json", label: "anonymous gameplay metrics verification" },
   { file: "reports/smoke.json", label: "browser smoke verification" },
 ];
@@ -164,6 +169,7 @@ function contentType(filePath) {
   const ext = path.extname(filePath).toLowerCase();
   if (ext === ".zip") return "application/zip";
   if (ext === ".mp4") return "video/mp4";
+  if (ext === ".png") return "image/png";
   if (ext === ".json") return "application/json";
   if (ext === ".md") return "text/markdown; charset=utf-8";
   return "application/octet-stream";

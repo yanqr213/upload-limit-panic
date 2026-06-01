@@ -1,6 +1,6 @@
 # Upload Limit Panic Platform Submission
 
-Generated: 2026-06-01T22:44:52.885Z
+Generated: 2026-06-01T23:12:10.754Z
 
 ## Game
 
@@ -38,6 +38,9 @@ Rewarded ads may be used only for optional hints, retry, revive, or bonus time a
 
 - desktopScreenshot: reports/desktop-smoke.png
 - mobileScreenshot: reports/mobile-smoke.png
+- platformIcon: reports/upload-limit-panic-icon-512.png
+- platformCover: reports/upload-limit-panic-cover-16x9.png
+- socialCard: reports/upload-limit-panic-social-card.png
 - demoVideo: reports/upload-limit-panic-demo.mp4
 - releaseDemoVideo: https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4
 - icon: src/icon.svg

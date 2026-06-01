@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-01T22:45:27.363Z",
+  "generatedAt": "2026-06-01T22:59:34.924Z",
   "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   "tag": "platform-submission-v1",
   "assets": [
@@ -12,20 +12,50 @@
     {
       "name": "upload-limit-panic-demo.mp4",
       "label": "8-second vertical gameplay demo MP4",
-      "size": 37405,
+      "size": 37988,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4"
     },
     {
       "name": "platform-submission.md",
       "label": "copy-ready platform submission notes",
-      "size": 2096,
+      "size": 2268,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.md"
     },
     {
       "name": "platform-submission.json",
       "label": "machine-readable platform submission fields",
-      "size": 4557,
+      "size": 4750,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.json"
+    },
+    {
+      "name": "upload-limit-panic-icon-512.png",
+      "label": "512x512 platform icon",
+      "size": 8265,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png"
+    },
+    {
+      "name": "upload-limit-panic-cover-16x9.png",
+      "label": "1280x720 platform cover image",
+      "size": 54501,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png"
+    },
+    {
+      "name": "upload-limit-panic-social-card.png",
+      "label": "1200x630 social preview card",
+      "size": 49847,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-social-card.png"
+    },
+    {
+      "name": "platform-assets.json",
+      "label": "platform image asset manifest",
+      "size": 752,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-assets.json"
+    },
+    {
+      "name": "crazygames-verification.json",
+      "label": "CrazyGames Basic Launch readiness checks",
+      "size": 348,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/crazygames-verification.json"
     },
     {
       "name": "analytics-verification.json",
@@ -36,7 +66,7 @@
     {
       "name": "smoke.json",
       "label": "browser smoke verification",
-      "size": 343,
+      "size": 346,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
     }
   ]

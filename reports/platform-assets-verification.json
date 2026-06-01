@@ -1,0 +1,22 @@
+{
+  "generatedAt": "2026-06-01T23:12:10.570Z",
+  "status": "passed",
+  "assets": [
+    {
+      "fileName": "upload-limit-panic-icon-512.png",
+      "width": 512,
+      "height": 512
+    },
+    {
+      "fileName": "upload-limit-panic-cover-16x9.png",
+      "width": 1280,
+      "height": 720
+    },
+    {
+      "fileName": "upload-limit-panic-social-card.png",
+      "width": 1200,
+      "height": 630
+    }
+  ],
+  "failures": []
+}
