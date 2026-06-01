@@ -11,6 +11,8 @@
     "smoke": "node scripts/smoke.cjs",
     "submission": "node scripts/submission.cjs",
     "demo:video": "node scripts/demo-video.cjs",
+    "release:assets": "node scripts/release-assets.cjs",
+    "verify:release": "node scripts/verify-release.cjs",
     "package": "node scripts/package.cjs"
   },
   "devDependencies": {

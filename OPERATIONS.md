@@ -13,7 +13,7 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 5. Run `npm.cmd run demo:video`.
 6. Run `npm.cmd run submission`.
 7. Run `npm.cmd run package`.
-8. Upload `reports/upload-limit-panic-html5.zip` for itch.io or the `dist/` contents for platforms that request loose HTML5 files.
+8. Upload `reports/upload-limit-panic-html5.zip` for itch.io, use the `dist/` contents for platforms that request loose HTML5 files, or use the public Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1.
 9. Include `reports/desktop-smoke.png`, `reports/mobile-smoke.png`, and `reports/upload-limit-panic-demo.mp4` as submission media when useful.
 
 ## Recommended Platform Order
@@ -42,6 +42,7 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 - Packaged ZIP is present, has `index.html` at archive root, and is under 10 MB.
 - No secrets are present in source files.
 - `/api/metrics` returns aggregate counts after at least one tracked play session.
+- GitHub Release `platform-submission-v1` contains ZIP, MP4, submission notes, and verification reports.
 
 ## Revenue Reality
 

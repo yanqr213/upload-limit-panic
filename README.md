@@ -43,6 +43,7 @@ Outputs:
 - `reports/platform-submission.md`: human-readable submission notes.
 - `reports/upload-limit-panic-html5.tar.gz`: platform upload package.
 - `reports/upload-limit-panic-html5.zip`: itch.io-ready HTML5 upload package.
+- GitHub Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1
 
 ## Monetization Path
 

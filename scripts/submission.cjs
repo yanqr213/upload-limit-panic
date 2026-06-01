@@ -24,6 +24,7 @@ const submission = {
     liveUrl: "https://upload-limit-panic.pages.dev/",
     metricsUrl: "https://upload-limit-panic.pages.dev/api/metrics",
     repository: "https://github.com/yanqr213/upload-limit-panic",
+    releaseUrl: "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   },
   monetization: {
     currentState: "Standalone build has ads disabled.",
@@ -39,12 +40,14 @@ const submission = {
   uploadPackages: {
     distFolder: "dist/",
     itchIoZip: "reports/upload-limit-panic-html5.zip",
+    releaseZip: "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip",
     tarGzFallback: "reports/upload-limit-panic-html5.tar.gz",
   },
   assets: {
     desktopScreenshot: "reports/desktop-smoke.png",
     mobileScreenshot: "reports/mobile-smoke.png",
     demoVideo: "reports/upload-limit-panic-demo.mp4",
+    releaseDemoVideo: "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
     icon: "src/icon.svg",
   },
   platformFields: {
@@ -100,6 +103,8 @@ function renderMarkdown(data) {
     `Metrics URL: ${data.game.metricsUrl}`,
     "",
     `Repository: ${data.game.repository}`,
+    "",
+    `Release pack: ${data.game.releaseUrl}`,
     "",
     "## Controls",
     "",

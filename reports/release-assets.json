@@ -1,0 +1,43 @@
+{
+  "generatedAt": "2026-06-01T22:34:06.098Z",
+  "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
+  "tag": "platform-submission-v1",
+  "assets": [
+    {
+      "name": "upload-limit-panic-html5.zip",
+      "label": "HTML5 ZIP package for itch.io and platform upload",
+      "size": 34821,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip"
+    },
+    {
+      "name": "upload-limit-panic-demo.mp4",
+      "label": "8-second vertical gameplay demo MP4",
+      "size": 38155,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4"
+    },
+    {
+      "name": "platform-submission.md",
+      "label": "copy-ready platform submission notes",
+      "size": 2096,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.md"
+    },
+    {
+      "name": "platform-submission.json",
+      "label": "machine-readable platform submission fields",
+      "size": 4165,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.json"
+    },
+    {
+      "name": "analytics-verification.json",
+      "label": "anonymous gameplay metrics verification",
+      "size": 270,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/analytics-verification.json"
+    },
+    {
+      "name": "smoke.json",
+      "label": "browser smoke verification",
+      "size": 345,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
+    }
+  ]
+}

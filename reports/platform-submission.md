@@ -1,6 +1,6 @@
 # Upload Limit Panic Platform Submission
 
-Generated: 2026-06-01T22:27:48.582Z
+Generated: 2026-06-01T22:33:57.463Z
 
 ## Game
 
@@ -15,6 +15,8 @@ Live URL: https://upload-limit-panic.pages.dev/
 Metrics URL: https://upload-limit-panic.pages.dev/api/metrics
 
 Repository: https://github.com/yanqr213/upload-limit-panic
+
+Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1
 
 ## Controls
 
@@ -37,10 +39,12 @@ Rewarded ads may be used only for optional hints, retry, revive, or bonus time a
 - desktopScreenshot: reports/desktop-smoke.png
 - mobileScreenshot: reports/mobile-smoke.png
 - demoVideo: reports/upload-limit-panic-demo.mp4
+- releaseDemoVideo: https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4
 - icon: src/icon.svg
 
 ## Upload Packages
 
 - distFolder: dist/
 - itchIoZip: reports/upload-limit-panic-html5.zip
+- releaseZip: https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip
 - tarGzFallback: reports/upload-limit-panic-html5.tar.gz
