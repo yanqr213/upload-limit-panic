@@ -1,0 +1,17 @@
+{
+  "generatedAt": "2026-06-01T21:40:42.307Z",
+  "state": {
+    "score": "282",
+    "currentFile": "contract_copy_54.png",
+    "modalHidden": true,
+    "eventCount": 3,
+    "colored": 1600
+  },
+  "browserEvents": [],
+  "screenshots": [
+    "reports/desktop-smoke.png",
+    "reports/mobile-smoke.png"
+  ],
+  "status": "passed",
+  "failures": []
+}

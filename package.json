@@ -1,0 +1,16 @@
+{
+  "name": "upload-limit-panic",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A zero-domain HTML5 arcade game prototype for platform ad validation.",
+  "scripts": {
+    "start": "node scripts/server.cjs",
+    "build": "node scripts/build.cjs",
+    "verify": "node scripts/verify.cjs",
+    "smoke": "node scripts/smoke.cjs",
+    "package": "node scripts/package.cjs"
+  },
+  "devDependencies": {
+    "@playwright/test": "^1.45.0"
+  }
+}

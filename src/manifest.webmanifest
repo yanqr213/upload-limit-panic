@@ -1,0 +1,16 @@
+{
+  "name": "Upload Limit Panic",
+  "short_name": "Limit Panic",
+  "description": "A fast HTML5 file sorting game for zero-domain platform validation.",
+  "start_url": "./index.html",
+  "display": "fullscreen",
+  "background_color": "#f7f3e8",
+  "theme_color": "#0f8b8d",
+  "icons": [
+    {
+      "src": "./icon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml"
+    }
+  ]
+}

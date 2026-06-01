@@ -1,0 +1,20 @@
+{
+  "generatedAt": "2026-06-01T21:40:33.585Z",
+  "status": "passed",
+  "files": [
+    "index.html",
+    "styles.css",
+    "game.js",
+    "platform.js",
+    "manifest.webmanifest",
+    "icon.svg"
+  ],
+  "checks": [
+    "static HTML5 build",
+    "canvas game surface",
+    "mobile layout",
+    "platform ad adapter",
+    "local event tracking",
+    "no ad-click inducement copy"
+  ]
+}

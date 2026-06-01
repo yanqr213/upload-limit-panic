@@ -1,0 +1,19 @@
+{
+  "generatedAt": "2026-06-01T21:40:40.279Z",
+  "package": "reports\\upload-limit-panic-html5.tar.gz",
+  "bytes": 9034,
+  "files": [
+    "build-info.json",
+    "game.js",
+    "icon.svg",
+    "index.html",
+    "manifest.webmanifest",
+    "platform.js",
+    "styles.css"
+  ],
+  "uploadNotes": [
+    "For CrazyGames or itch.io HTML5, upload the contents of dist or this archive when tar.gz is accepted.",
+    "Standalone build has no forced ad display; rewarded hooks are adapter-only.",
+    "Keep screenshots and validation report with the submission."
+  ]
+}

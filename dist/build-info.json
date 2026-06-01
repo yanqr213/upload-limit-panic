@@ -1,0 +1,11 @@
+{
+  "name": "Upload Limit Panic",
+  "generatedAt": "2026-06-01T21:40:33.503Z",
+  "platformTargets": [
+    "CrazyGames HTML5",
+    "itch.io HTML5",
+    "static hosting",
+    "future Douyin mini-game port"
+  ],
+  "ads": "Rewarded and midgame ad hooks are adapter-only; no ads are forced in the standalone build."
+}

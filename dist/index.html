@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="theme-color" content="#f7f3e8">
+    <title>Upload Limit Panic - Free HTML5 Sorting Game</title>
+    <meta name="description" content="Play Upload Limit Panic, a fast browser game about sorting files before the upload limit timer runs out. Built for zero-domain platform validation.">
+    <link rel="canonical" href="https://printable-tools-lab.pages.dev/upload-limit-panic/">
+    <link rel="manifest" href="./manifest.webmanifest">
+    <link rel="stylesheet" href="./styles.css">
+  </head>
+  <body>
+    <main class="game-shell" aria-label="Upload Limit Panic game">
+      <section class="topbar" aria-label="Game status">
+        <div class="brand-lockup">
+          <div class="logo-mark" aria-hidden="true">UL</div>
+          <div>
+            <p class="eyebrow">HTML5 arcade</p>
+            <h1>Upload Limit Panic</h1>
+          </div>
+        </div>
+        <div class="stat-grid" aria-live="polite">
+          <div class="stat">
+            <span>Score</span>
+            <strong id="scoreValue">0</strong>
+          </div>
+          <div class="stat">
+            <span>Combo</span>
+            <strong id="comboValue">x1</strong>
+          </div>
+          <div class="stat">
+            <span>Time</span>
+            <strong id="timeValue">60</strong>
+          </div>
+          <div class="stat">
+            <span>Limit</span>
+            <strong id="limitValue">20 MB</strong>
+          </div>
+        </div>
+      </section>
+
+      <section class="stage-wrap">
+        <canvas id="gameCanvas" width="1280" height="720" aria-label="Sort falling files into the correct upload lane"></canvas>
+
+        <aside class="side-panel" aria-label="Game controls">
+          <div class="panel-section compact">
+            <p class="panel-kicker">Current file</p>
+            <h2 id="currentFileName">Ready</h2>
+            <div class="file-meter">
+              <span id="currentFileType">PDF</span>
+              <strong id="currentFileSize">0 MB</strong>
+            </div>
+            <div class="limit-bar" aria-hidden="true">
+              <div id="limitBarFill"></div>
+            </div>
+          </div>
+
+          <div class="panel-section lanes">
+            <button class="lane-button" data-lane="compress">
+              <span class="lane-icon">C</span>
+              <span>Compress</span>
+              <small>Too large</small>
+            </button>
+            <button class="lane-button" data-lane="convert">
+              <span class="lane-icon">V</span>
+              <span>Convert</span>
+              <small>Wrong format</small>
+            </button>
+            <button class="lane-button" data-lane="send">
+              <span class="lane-icon">S</span>
+              <span>Send</span>
+              <small>Ready file</small>
+            </button>
+            <button class="lane-button" data-lane="trash">
+              <span class="lane-icon">T</span>
+              <span>Trash</span>
+              <small>Duplicate</small>
+            </button>
+          </div>
+
+          <div class="panel-section controls">
+            <button id="startButton" class="primary-button">Start Run</button>
+            <button id="hintButton" class="secondary-button">Hint</button>
+            <button id="restartButton" class="secondary-button">Restart</button>
+          </div>
+
+          <div class="panel-section text-block">
+            <p>Sort every file before the queue bursts. Keyboard: 1 compress, 2 convert, 3 send, 4 trash, H hint.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="bottom-strip" aria-label="Validation and links">
+        <div>
+          <strong>Zero-domain monetization test</strong>
+          <span>Ready for CrazyGames-style HTML5 review; rewarded ad hooks are optional and disabled until platform approval.</span>
+        </div>
+        <a href="https://printable-tools-lab.pages.dev/free-pdf-tools/" target="_blank" rel="noopener">Free PDF tools</a>
+      </section>
+    </main>
+
+    <div id="modal" class="modal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-card">
+        <h2 id="modalTitle">Upload queue ready</h2>
+        <p id="modalBody">Sort files into the right lane. Keep the queue calm, build combo, and survive the upload rush.</p>
+        <div id="modalStats" class="modal-stats"></div>
+        <div class="modal-actions">
+          <button id="modalPrimary" class="primary-button">Play</button>
+          <button id="modalSecondary" class="secondary-button">Practice</button>
+        </div>
+      </div>
+    </div>
+
+    <script src="./platform.js"></script>
+    <script src="./game.js"></script>
+  </body>
+</html>
