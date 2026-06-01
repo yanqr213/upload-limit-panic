@@ -91,6 +91,7 @@
     state.lastTick = performance.now();
     modal.classList.add("hidden");
     startButton.textContent = "Restart Run";
+    window.UploadLimitPlatform.gameplayStart();
     window.UploadLimitPlatform.track("run_start", { practice });
     updateHud();
   }
@@ -193,6 +194,7 @@
     state.over = true;
     state.running = false;
     startButton.textContent = "Start Run";
+    window.UploadLimitPlatform.gameplayStop();
     window.UploadLimitPlatform.track("run_end", {
       score: state.score,
       sorted: state.sorted,

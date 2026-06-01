@@ -26,6 +26,8 @@ npm.cmd install
 npm.cmd run build
 npm.cmd run verify
 npm.cmd run smoke
+npm.cmd run demo:video
+npm.cmd run submission
 npm.cmd run package
 ```
 
@@ -34,7 +36,11 @@ Outputs:
 - `dist/`: static HTML5 game.
 - `reports/desktop-smoke.png`: desktop visual check.
 - `reports/mobile-smoke.png`: mobile visual check.
+- `reports/upload-limit-panic-demo.mp4`: short gameplay demo for platform review.
+- `reports/platform-submission.json`: copy-ready platform metadata.
+- `reports/platform-submission.md`: human-readable submission notes.
 - `reports/upload-limit-panic-html5.tar.gz`: platform upload package.
+- `reports/upload-limit-panic-html5.zip`: itch.io-ready HTML5 upload package.
 
 ## Monetization Path
 
@@ -44,6 +50,13 @@ Outputs:
 4. Use rewarded ads only for optional hints, retry, revive, or bonus time.
 5. Do not block basic gameplay behind ad viewing.
 6. Do not ask users to click ads or watch ads for external rewards.
+
+## Account Checklist
+
+- CrazyGames developer account: required for submission and later ad eligibility. No domain purchase is required.
+- itch.io account: required only to publish a public HTML5 page; upload `reports/upload-limit-panic-html5.zip`.
+- Tipalti or platform payout profile: required only after platform revenue becomes payable.
+- Douyin mini-game account: optional later port; do not start until platform feedback proves the gameplay loop is worth porting.
 
 ## Validation Gates
 

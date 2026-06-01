@@ -11,6 +11,7 @@
       state.sdk = window.CrazyGames.SDK;
       try {
         await state.sdk.init();
+        await state.sdk.game?.loadingStop?.();
         state.ready = true;
       } catch (error) {
         console.warn("Platform SDK init failed", error);
@@ -56,9 +57,33 @@
     window.dispatchEvent(new CustomEvent("ulp:event", { detail: event }));
   }
 
+  async function gameplayStart() {
+    if (!state.ready || !state.sdk?.game?.gameplayStart) return false;
+    try {
+      await state.sdk.game.gameplayStart();
+      return true;
+    } catch (error) {
+      console.warn("Gameplay start event failed", error);
+      return false;
+    }
+  }
+
+  async function gameplayStop() {
+    if (!state.ready || !state.sdk?.game?.gameplayStop) return false;
+    try {
+      await state.sdk.game.gameplayStop();
+      return true;
+    } catch (error) {
+      console.warn("Gameplay stop event failed", error);
+      return false;
+    }
+  }
+
   window.UploadLimitPlatform = {
     init,
     requestAd,
+    gameplayStart,
+    gameplayStop,
     track,
     state,
   };

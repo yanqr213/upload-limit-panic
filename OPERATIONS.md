@@ -9,9 +9,11 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 1. Run `npm.cmd run build`.
 2. Run `npm.cmd run verify`.
 3. Run `npm.cmd run smoke`.
-4. Run `npm.cmd run package`.
-5. Upload `dist/` contents or `reports/upload-limit-panic-html5.tar.gz` if the platform accepts archives.
-6. Include `reports/desktop-smoke.png` and `reports/mobile-smoke.png` as submission screenshots when useful.
+4. Run `npm.cmd run demo:video`.
+5. Run `npm.cmd run submission`.
+6. Run `npm.cmd run package`.
+7. Upload `reports/upload-limit-panic-html5.zip` for itch.io or the `dist/` contents for platforms that request loose HTML5 files.
+8. Include `reports/desktop-smoke.png`, `reports/mobile-smoke.png`, and `reports/upload-limit-panic-demo.mp4` as submission media when useful.
 
 ## Recommended Platform Order
 
@@ -32,8 +34,10 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 
 - `reports/verification.json` status is `passed`.
 - `reports/smoke.json` status is `passed`.
+- `reports/demo-video.json` status is `passed`.
+- `reports/platform-submission.json` exists and includes live URL, controls, and ad-safety notes.
 - Desktop and mobile screenshots show a nonblank playable canvas.
-- Packaged archive is present and under 10 MB.
+- Packaged ZIP is present, has `index.html` at archive root, and is under 10 MB.
 - No secrets are present in source files.
 
 ## Revenue Reality
