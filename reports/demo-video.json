@@ -1,10 +1,10 @@
 {
-  "generatedAt": "2026-06-01T22:31:50.903Z",
+  "generatedAt": "2026-06-01T22:44:52.697Z",
   "sourceScreenshots": [
     "reports\\mobile-smoke.png",
     "reports\\desktop-smoke.png"
   ],
   "output": "reports\\upload-limit-panic-demo.mp4",
-  "bytes": 38155,
+  "bytes": 37405,
   "status": "passed"
 }

@@ -323,6 +323,10 @@ h1 {
   font-weight: 800;
 }
 
+.platform-crazygames .external-tool-link {
+  display: none;
+}
+
 .modal {
   position: fixed;
   inset: 0;

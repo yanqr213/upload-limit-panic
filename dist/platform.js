@@ -1,11 +1,22 @@
 (function () {
+  const CRAZYGAMES_SDK_URL = "https://sdk.crazygames.com/crazygames-sdk-v3.js";
+  let initPromise = null;
   const state = {
     ready: false,
     provider: "local",
     sdk: null,
   };
 
-  async function init() {
+  if (isCrazyGamesContext()) document.documentElement.classList.add("platform-crazygames");
+
+  function init() {
+    if (!initPromise) initPromise = initSdk();
+    return initPromise;
+  }
+
+  async function initSdk() {
+    if (!isCrazyGamesContext() && !window.CrazyGames?.SDK) return state;
+    await loadCrazyGamesSdk();
     if (window.CrazyGames?.SDK) {
       state.provider = "crazygames";
       state.sdk = window.CrazyGames.SDK;
@@ -20,7 +31,30 @@
     return state;
   }
 
+  function loadCrazyGamesSdk() {
+    if (window.CrazyGames?.SDK) return Promise.resolve();
+    return new Promise((resolve) => {
+      const existing = document.querySelector(`script[src="${CRAZYGAMES_SDK_URL}"]`);
+      if (existing) {
+        existing.addEventListener("load", () => resolve(), { once: true });
+        existing.addEventListener("error", () => resolve(), { once: true });
+        return;
+      }
+      const script = document.createElement("script");
+      script.src = CRAZYGAMES_SDK_URL;
+      script.async = true;
+      script.onload = () => resolve();
+      script.onerror = () => resolve();
+      document.head.appendChild(script);
+    });
+  }
+
   async function requestAd(kind, callbacks = {}) {
+    await init();
+    if (!adsAllowed()) {
+      callbacks.onUnavailable?.();
+      return false;
+    }
     if (!state.ready || !state.sdk?.ad?.requestAd) {
       callbacks.onUnavailable?.();
       return false;
@@ -105,6 +139,7 @@
   }
 
   async function gameplayStart() {
+    await init();
     if (!state.ready || !state.sdk?.game?.gameplayStart) return false;
     try {
       await state.sdk.game.gameplayStart();
@@ -116,6 +151,7 @@
   }
 
   async function gameplayStop() {
+    await init();
     if (!state.ready || !state.sdk?.game?.gameplayStop) return false;
     try {
       await state.sdk.game.gameplayStop();
@@ -126,11 +162,24 @@
     }
   }
 
+  function isCrazyGamesContext() {
+    const host = window.location.hostname || "";
+    const referrer = document.referrer || "";
+    const params = new URLSearchParams(window.location.search);
+    return host.includes("crazygames") || referrer.includes("crazygames") || params.get("platform") === "crazygames" || params.get("cg_sdk") === "1";
+  }
+
+  function adsAllowed() {
+    const params = new URLSearchParams(window.location.search);
+    return state.ready && params.get("ads") === "1";
+  }
+
   window.UploadLimitPlatform = {
     init,
     requestAd,
     gameplayStart,
     gameplayStop,
+    adsAllowed,
     track,
     state,
   };

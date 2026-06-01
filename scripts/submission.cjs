@@ -55,9 +55,14 @@ const submission = {
       name: "Upload Limit Panic",
       description:
         "A fast file-sorting arcade game. Choose Compress for oversized files, Convert for wrong formats, Send for ready files, and Trash for duplicates before the queue pressure bursts.",
-      controls: "1/2/3/4 keys or touch lane buttons; H for hint.",
-      monetizationNote:
-        "CrazyGames SDK hooks are adapter-only. Ads are not forced in the standalone build; rewarded placements would be optional after platform review.",
+    controls: "1/2/3/4 keys or touch lane buttons; H for hint.",
+    monetizationNote:
+        "CrazyGames SDK v3 is dynamically loaded only in CrazyGames context. loadingStop, gameplayStart, and gameplayStop hooks are present. Ads are disabled by default for Basic Launch; rewarded placements are gated behind an explicit ads flag and should only be enabled after platform approval.",
+      complianceNotes: [
+        "Standalone and Basic Launch builds do not request ads.",
+        "External tool CTA is hidden in CrazyGames context.",
+        "All game files use relative paths and the current package is under 500KB.",
+      ],
     },
     itchIo: {
       projectName: "Upload Limit Panic",

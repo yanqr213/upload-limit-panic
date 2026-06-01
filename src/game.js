@@ -175,7 +175,7 @@
 
   async function useHint() {
     if (!state.running || state.paused || state.over || !state.current) return;
-    if (state.score < 120 && state.sorted > 2) {
+    if (window.UploadLimitPlatform.adsAllowed() && state.score < 120 && state.sorted > 2) {
       state.paused = true;
       const watched = await window.UploadLimitPlatform.requestAd("rewarded", {
         onUnavailable: () => {},
@@ -470,8 +470,8 @@
     "Practice",
     [
       ["Keys", "1-4"],
-      ["Goal", "60s"],
-      ["Ads", "Off"],
+        ["Goal", "60s"],
+      ["Ads", "Disabled"],
     ],
     () => reset(false),
     () => reset(true)

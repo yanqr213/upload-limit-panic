@@ -26,6 +26,7 @@ npm.cmd install
 npm.cmd run build
 npm.cmd run verify
 npm.cmd run verify:analytics
+npm.cmd run verify:crazygames
 npm.cmd run smoke
 npm.cmd run demo:video
 npm.cmd run submission
@@ -36,6 +37,7 @@ Outputs:
 
 - `dist/`: static HTML5 game.
 - `reports/analytics-verification.json`: anonymous event and metrics verification.
+- `reports/crazygames-verification.json`: CrazyGames Basic Launch readiness checks.
 - `reports/desktop-smoke.png`: desktop visual check.
 - `reports/mobile-smoke.png`: mobile visual check.
 - `reports/upload-limit-panic-demo.mp4`: short gameplay demo for platform review.

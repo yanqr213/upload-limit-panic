@@ -9,12 +9,13 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 1. Run `npm.cmd run build`.
 2. Run `npm.cmd run verify`.
 3. Run `npm.cmd run verify:analytics`.
-4. Run `npm.cmd run smoke`.
-5. Run `npm.cmd run demo:video`.
-6. Run `npm.cmd run submission`.
-7. Run `npm.cmd run package`.
-8. Upload `reports/upload-limit-panic-html5.zip` for itch.io, use the `dist/` contents for platforms that request loose HTML5 files, or use the public Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1.
-9. Include `reports/desktop-smoke.png`, `reports/mobile-smoke.png`, and `reports/upload-limit-panic-demo.mp4` as submission media when useful.
+4. Run `npm.cmd run verify:crazygames`.
+5. Run `npm.cmd run smoke`.
+6. Run `npm.cmd run demo:video`.
+7. Run `npm.cmd run submission`.
+8. Run `npm.cmd run package`.
+9. Upload `reports/upload-limit-panic-html5.zip` for itch.io, use the `dist/` contents for platforms that request loose HTML5 files, or use the public Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1.
+10. Include `reports/desktop-smoke.png`, `reports/mobile-smoke.png`, and `reports/upload-limit-panic-demo.mp4` as submission media when useful.
 
 ## Recommended Platform Order
 
@@ -35,6 +36,7 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 
 - `reports/verification.json` status is `passed`.
 - `reports/analytics-verification.json` status is `passed`.
+- `reports/crazygames-verification.json` status is `passed`.
 - `reports/smoke.json` status is `passed`.
 - `reports/demo-video.json` status is `passed`.
 - `reports/platform-submission.json` exists and includes live URL, controls, and ad-safety notes.
