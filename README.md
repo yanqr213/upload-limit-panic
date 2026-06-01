@@ -38,7 +38,7 @@ Outputs:
 
 - `dist/`: static HTML5 game.
 - `reports/analytics-verification.json`: anonymous event and metrics verification.
-- `reports/crazygames-verification.json`: CrazyGames Basic Launch readiness checks.
+- `reports/crazygames-verification.json`: CrazyGames and Yandex Games SDK readiness checks.
 - `reports/upload-limit-panic-icon-512.png`: platform icon.
 - `reports/upload-limit-panic-cover-16x9.png`: platform cover image.
 - `reports/upload-limit-panic-social-card.png`: social preview card.
@@ -53,9 +53,9 @@ Outputs:
 
 ## Monetization Path
 
-1. Submit the HTML5 build to a platform such as CrazyGames or itch.io.
+1. Submit the HTML5 build to a platform such as CrazyGames, Yandex Games, or itch.io.
 2. Use the platform review stage and the anonymous `/api/metrics` funnel to test retention and feedback.
-3. Add the platform SDK only when the platform allows ads.
+3. Enable platform-native ad calls only when the platform allows ads.
 4. Use rewarded ads only for optional hints, retry, revive, or bonus time.
 5. Do not block basic gameplay behind ad viewing.
 6. Do not ask users to click ads or watch ads for external rewards.
@@ -67,6 +67,7 @@ The hosted Pages build records only aggregate counts in Cloudflare KV: page view
 ## Account Checklist
 
 - CrazyGames developer account: required for submission and later ad eligibility. No domain purchase is required.
+- Yandex Games developer account: useful second HTML5 platform with SDK hooks now present in the build.
 - itch.io account: required only to publish a public HTML5 page; upload `reports/upload-limit-panic-html5.zip`.
 - Tipalti or platform payout profile: required only after platform revenue becomes payable.
 - Douyin mini-game account: optional later port; do not start until platform feedback proves the gameplay loop is worth porting.

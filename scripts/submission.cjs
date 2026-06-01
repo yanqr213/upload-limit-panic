@@ -29,7 +29,7 @@ const submission = {
   monetization: {
     currentState: "Standalone build has ads disabled.",
     intendedPlatformAds:
-      "Rewarded ads may be used only for optional hints, retry, revive, or bonus time after platform approval. No gameplay button is disguised as an ad, and no user is asked to click ads.",
+      "Rewarded ads may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex ad calls are gated behind an explicit ads flag in the review build. No gameplay button is disguised as an ad, and no user is asked to click ads.",
     adSafety: [
       "No forced ad wall in the standalone build.",
       "No ad-click inducement copy.",
@@ -63,8 +63,19 @@ const submission = {
         "CrazyGames SDK v3 is dynamically loaded only in CrazyGames context. loadingStop, gameplayStart, and gameplayStop hooks are present. Ads are disabled by default for Basic Launch; rewarded placements are gated behind an explicit ads flag and should only be enabled after platform approval.",
       complianceNotes: [
         "Standalone and Basic Launch builds do not request ads.",
-        "External tool CTA is hidden in CrazyGames context.",
+        "External tool CTA is hidden in CrazyGames and Yandex contexts.",
         "All game files use relative paths and the current package is under 500KB.",
+      ],
+    },
+    yandexGames: {
+      name: "Upload Limit Panic",
+      description:
+        "A short file-sorting arcade game with simple touch controls, clear score feedback, and optional platform-approved rewarded assists.",
+      monetizationNote: "Yandex SDK v2 is dynamically loaded only in Yandex context. LoadingAPI.ready and GameplayAPI start/stop hooks are present. showRewardedVideo and showFullscreenAdv calls are gated and disabled unless the platform context is ready and ads=1 is present.",
+      complianceNotes: [
+        "Standalone build does not request ads.",
+        "External tool CTA is hidden in platform contexts.",
+        "The package is self-contained and uses relative local asset paths.",
       ],
     },
     itchIo: {

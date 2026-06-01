@@ -1,12 +1,14 @@
 {
-  "generatedAt": "2026-06-01T23:12:09.721Z",
+  "generatedAt": "2026-06-01T23:55:54.582Z",
   "status": "passed",
   "checks": [
     "CrazyGames SDK v3 dynamic loader",
+    "Yandex Games SDK dynamic loader",
     "loading/gameplay lifecycle hooks",
+    "Yandex LoadingAPI and GameplayAPI hooks",
     "explicit ad gating",
     "no watch-ad copy in Basic Launch build",
-    "external link hidden in CrazyGames context",
+    "external link hidden in platform contexts",
     "relative paths and small package"
   ],
   "failures": []

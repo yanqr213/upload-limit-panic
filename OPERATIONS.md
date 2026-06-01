@@ -37,7 +37,7 @@ Validate a zero-domain, no-sales monetization path by making Upload Limit Panic 
 
 - `reports/verification.json` status is `passed`.
 - `reports/analytics-verification.json` status is `passed`.
-- `reports/crazygames-verification.json` status is `passed`.
+- `reports/crazygames-verification.json` status is `passed` and covers CrazyGames plus Yandex SDK hooks.
 - `reports/smoke.json` status is `passed`.
 - `reports/demo-video.json` status is `passed`.
 - `reports/platform-submission.json` exists and includes live URL, controls, and ad-safety notes.
