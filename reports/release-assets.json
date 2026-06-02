@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T16:04:46.140Z",
+  "generatedAt": "2026-06-02T16:19:21.383Z",
   "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   "tag": "platform-submission-v1",
   "assets": [
@@ -10,6 +10,18 @@
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip"
     },
     {
+      "name": "upload-limit-panic-portal-clean.zip",
+      "label": "clean HTML5 ZIP for portals that ban third-party ad SDKs and external links",
+      "size": 32694,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-portal-clean.zip"
+    },
+    {
+      "name": "clean-portal-package.json",
+      "label": "clean portal package verification and upload notes",
+      "size": 2196,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/clean-portal-package.json"
+    },
+    {
       "name": "upload-limit-panic-demo.mp4",
       "label": "8-second vertical gameplay demo MP4",
       "size": 38151,
@@ -18,25 +30,25 @@
     {
       "name": "platform-submission.md",
       "label": "copy-ready platform submission notes",
-      "size": 2445,
+      "size": 2786,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.md"
     },
     {
       "name": "platform-submission.json",
       "label": "machine-readable platform submission fields",
-      "size": 7916,
+      "size": 8141,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.json"
     },
     {
       "name": "platform-submission-copy.md",
       "label": "field-by-field copy pack for CrazyGames, Yandex Games, Playgama, GamePix, GameDistribution, and fallback portals",
-      "size": 25371,
+      "size": 30688,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy.md"
     },
     {
       "name": "platform-submission-copy.json",
       "label": "machine-readable submission copy pack",
-      "size": 28149,
+      "size": 34030,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy.json"
     },
     {
@@ -84,19 +96,19 @@
     {
       "name": "smoke.json",
       "label": "browser smoke verification",
-      "size": 345,
+      "size": 346,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
     },
     {
       "name": "review-readiness.md",
       "label": "human-readable platform review readiness report",
-      "size": 3181,
+      "size": 3528,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.md"
     },
     {
       "name": "review-readiness.json",
       "label": "machine-readable platform review readiness report",
-      "size": 5069,
+      "size": 5545,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.json"
     }
   ]

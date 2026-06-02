@@ -52,6 +52,7 @@ const reports = {
   analytics: readJson("reports/analytics-verification.json"),
   assets: readJson("reports/platform-assets-verification.json"),
   package: readJson("reports/package.json"),
+  cleanPackage: readJson("reports/clean-portal-package.json"),
   release: readJson("reports/release-assets.json"),
 };
 
@@ -68,6 +69,8 @@ check("anonymous_metrics", src.platform.includes("sendBeacon") && src.platform.i
 check("no_secret_literals", noSecrets(), "Source does not contain obvious API keys, account tokens, or payment credentials.");
 check("no_server_dependency_in_zip", packageHasOnlyStaticFiles(), "Upload package contains only static dist files.");
 check("zip_package_small", zipSmallEnough(), "HTML5 ZIP is present and below the review-size budget.");
+check("clean_portal_package_passed", reports.cleanPackage?.status === "passed", "Clean portal ZIP passed third-party SDK, remote tracking, external link, and ad-call checks.");
+check("clean_portal_zip_small", cleanZipSmallEnough(), "Clean portal ZIP is present and below the review-size budget.");
 check("standalone_ads_disabled", standaloneAdsDisabled(), "Standalone build does not show ads; platform ads require SDK readiness and ads=1.");
 check("no_ad_inducement_copy", noAdInducement(), "Game copy avoids ad-click or watch-ad inducement.");
 check("platform_external_link_hidden", platformExternalLinksHidden(), "External CTA is hidden in embedded platform contexts.");
@@ -102,6 +105,7 @@ const report = {
     "Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.",
     "Rewarded assists are optional and only granted after platform reward completion callbacks.",
     "External links are hidden when embedded by game platforms.",
+    "A separate clean portal ZIP is available for portals that reject third-party ad SDKs, external links, or remote telemetry.",
   ],
   manualGates: [
     "Developer dashboard signup, email verification, CAPTCHA, legal consent, and payout setup still require the account owner.",
@@ -150,6 +154,11 @@ function packageHasOnlyStaticFiles() {
 
 function zipSmallEnough() {
   const zipPath = path.join(root, "reports", `${config.slug}-html5.zip`);
+  return fs.existsSync(zipPath) && fs.statSync(zipPath).size > 1000 && fs.statSync(zipPath).size < 750000;
+}
+
+function cleanZipSmallEnough() {
+  const zipPath = path.join(root, "reports", `${config.slug}-portal-clean.zip`);
   return fs.existsSync(zipPath) && fs.statSync(zipPath).size > 1000 && fs.statSync(zipPath).size < 750000;
 }
 

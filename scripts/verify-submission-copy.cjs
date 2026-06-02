@@ -14,8 +14,8 @@ let pack = null;
 if (!failures.length) {
   pack = JSON.parse(fs.readFileSync(copyPath, "utf8"));
   const md = fs.readFileSync(mdPath, "utf8");
-  assert(Array.isArray(pack.platforms) && pack.platforms.length >= 9, "Copy pack should include the expanded platform routes.");
-  for (const platformName of ["CrazyGames", "Yandex Games", "Playgama", "GamePix", "Lagged", "GameFlare", "GameDistribution", "Poki", "itch.io"]) {
+  assert(Array.isArray(pack.platforms) && pack.platforms.length >= 11, "Copy pack should include the expanded platform routes.");
+  for (const platformName of ["CrazyGames", "Yandex Games", "Playgama", "GamePix", "Lagged", "GameFlare", "Kongregate", "Newgrounds", "GameDistribution", "Poki", "itch.io"]) {
     assert(pack.platforms.some((item) => item.platform === platformName), `Copy pack missing ${platformName}.`);
     assert(md.includes(`##`) && md.includes(platformName), `Markdown missing ${platformName}.`);
   }
@@ -35,6 +35,8 @@ if (!failures.length) {
   assert(pack.assets?.releasePage?.startsWith("https://github.com/"), "Missing GitHub release page.");
   assert(String(pack.localFiles?.html5Zip || "").endsWith(".zip"), "Local HTML5 ZIP path missing.");
   assert(fs.existsSync(path.join(root, pack.localFiles.html5Zip || "")), "Local HTML5 ZIP does not exist.");
+  assert(String(pack.localFiles?.cleanPortalZip || "").endsWith("-portal-clean.zip"), "Local clean portal ZIP path missing.");
+  assert(fs.existsSync(path.join(root, pack.localFiles.cleanPortalZip || "")), "Local clean portal ZIP does not exist.");
 }
 
 const report = {

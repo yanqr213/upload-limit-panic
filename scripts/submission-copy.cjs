@@ -40,13 +40,16 @@ const copyPack = {
     genericPlatformCopy("GamePix", 4, "https://partners.gamepix.com/developers", "GamePix is a secondary distribution and hosting candidate with a published developer revenue-share model.", "Developer dashboard and SDK review are required before monetization."),
     genericPlatformCopy("Lagged", 5, "https://lagged.dev/", "Lagged is a simple HTML5 submission candidate with advertised revenue share through its developer dashboard.", "Submit only the ad-safe package and avoid ad-engagement inducement copy."),
     genericPlatformCopy("GameFlare", 6, "https://distribution.gameflare.com/developers/", "GameFlare is a lower-friction review candidate because it can review playable early-access HTML5 builds and monetizes with platform ads.", "Send the playable build or ZIP and keep ads controlled by the platform."),
-    genericPlatformCopy("GameDistribution", 7, "https://gamedistribution.com/developers/", "GameDistribution is a later broad-network distributor candidate that likely needs a platform-specific SDK adapter.", "Do not enable GameDistribution ad calls until a separate adapter is built."),
-    genericPlatformCopy("Poki", 8, "https://developers.poki.com/", "Poki is a later high-upside quality target, not the immediate route, because acceptance and possible web-exclusivity terms are higher friction.", "Do not submit broadly if a web-exclusive deal is required."),
+    cleanPortalCopy("Kongregate", 7, "https://www.kongregate.com/games/new", "Kongregate-style uploads can be useful for no-domain browser proof and potential platform-side ads/revenue share, but they are conservative about third-party ads and sponsorships inside uploaded games.", "Use the clean portal ZIP, not the SDK adapter ZIP."),
+    cleanPortalCopy("Newgrounds", 8, "https://www.newgrounds.com/projects/games", "Newgrounds can host HTML5 games and provide discovery/community feedback. Treat it as a clean feedback and possible ad-share route, not as the first revenue guarantee.", "Use the clean portal ZIP with no third-party ad SDKs, external links, or remote tracking."),
+    genericPlatformCopy("GameDistribution", 9, "https://gamedistribution.com/developers/", "GameDistribution is a later broad-network distributor candidate that likely needs a platform-specific SDK adapter.", "Do not enable GameDistribution ad calls until a separate adapter is built."),
+    genericPlatformCopy("Poki", 10, "https://developers.poki.com/", "Poki is a later high-upside quality target, not the immediate route, because acceptance and possible web-exclusivity terms are higher friction.", "Do not submit broadly if a web-exclusive deal is required."),
     itchCopy(),
   ],
   assets: assetLinks(),
   localFiles: {
     html5Zip: packages.itchIoZip || "",
+    cleanPortalZip: packages.cleanPortalZip || "",
     distFolder: packages.distFolder || "",
     demoVideo: assets.demoVideo || "",
     icon: assets.platformIcon || "",
@@ -55,6 +58,7 @@ const copyPack = {
   },
   validationGate: [
     "Use the HTML5 ZIP with index.html at the archive root.",
+    "Use the clean portal ZIP for portals that reject third-party ad SDKs, external links, sponsorships, or remote tracking.",
     "Keep standalone ads disabled until the platform accepts or requests monetization activation.",
     "Do not use ad-engagement inducement copy in titles, buttons, screenshots, or descriptions.",
     "Use platform SDK lifecycle hooks for loading and gameplay state.",
@@ -178,6 +182,37 @@ function genericPlatformCopy(platform, priority, submissionUrl, monetizationExpe
       demoVideo: assets.releaseDemoVideo || assets.demoVideo,
       sdkAndAdsNote: submission.monetization?.intendedPlatformAds || "",
       complianceNote: "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required.",
+    },
+  };
+}
+
+function cleanPortalCopy(platform, priority, submissionUrl, monetizationExpectation, gateNote) {
+  return {
+    platform,
+    priority,
+    submissionUrl,
+    monetizationExpectation,
+    sourceNotes: [
+      gateNote,
+      "The clean portal ZIP removes third-party ad SDKs, external links, sponsorship CTAs, and remote tracking while preserving local best score and gameplay.",
+      "Use portal-managed ads or revenue share only after the host accepts the game.",
+    ],
+    copyFields: {
+      title: game.title,
+      shortDescription: game.shortDescription,
+      longDescription: `${game.longDescription}\n\nClean portal build note: no third-party ad SDKs, no external links, no login, no in-app purchases, and no remote tracking calls are included in the clean ZIP.`,
+      genre: (game.genre || []).join(", "),
+      tags: (game.tags || []).join(", "),
+      controls: (game.controls || []).join(" "),
+      deviceSupport: (game.platforms || []).join(", "),
+      language: game.language,
+      contentRating: game.contentRating,
+      uploadPackage: packages.releaseCleanPortalZip || packages.cleanPortalZip,
+      livePreview: game.liveUrl,
+      icon512: releaseAssetUrl(assets.platformIcon) || assets.platformIcon,
+      cover16x9: releaseAssetUrl(assets.platformCover) || assets.platformCover,
+      demoVideo: assets.releaseDemoVideo || assets.demoVideo,
+      complianceNote: "Clean static HTML5 package with index.html at archive root, local gameplay only, no ad inducement, no gambling, and no personal data collection.",
     },
   };
 }

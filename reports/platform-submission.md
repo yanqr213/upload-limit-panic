@@ -1,6 +1,6 @@
 # Upload Limit Panic Platform Submission
 
-Generated: 2026-06-02T15:32:30.201Z
+Generated: 2026-06-02T16:16:02.682Z
 
 ## Game
 
@@ -49,5 +49,9 @@ Rewarded placements may be used only for optional hints, retry, revive, or bonus
 
 - distFolder: dist/
 - itchIoZip: reports/upload-limit-panic-html5.zip
+- cleanPortalZip: reports/upload-limit-panic-portal-clean.zip
+- releaseCleanPortalZip: https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-portal-clean.zip
 - releaseZip: https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip
 - tarGzFallback: reports/upload-limit-panic-html5.tar.gz
+
+Clean portal package: use releaseCleanPortalZip for portals that reject third-party ad SDKs, external links, or remote tracking.

@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-02T16:02:44.565Z",
+  "generatedAt": "2026-06-02T16:16:03.661Z",
   "game": "Upload Limit Panic",
   "liveUrl": "https://upload-limit-panic.pages.dev/",
   "status": "passed",
   "summary": {
-    "checks": 27,
-    "passed": 27,
+    "checks": 29,
+    "passed": 29,
     "failed": 0
   },
   "checks": [
@@ -63,6 +63,16 @@
       "id": "zip_package_small",
       "passed": true,
       "evidence": "HTML5 ZIP is present and below the review-size budget."
+    },
+    {
+      "id": "clean_portal_package_passed",
+      "passed": true,
+      "evidence": "Clean portal ZIP passed third-party SDK, remote tracking, external link, and ad-call checks."
+    },
+    {
+      "id": "clean_portal_zip_small",
+      "passed": true,
+      "evidence": "Clean portal ZIP is present and below the review-size budget."
     },
     {
       "id": "standalone_ads_disabled",
@@ -149,7 +159,8 @@
     "Zero-domain HTML5 package can be submitted to hosted game portals without buying a domain.",
     "Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.",
     "Rewarded assists are optional and only granted after platform reward completion callbacks.",
-    "External links are hidden when embedded by game platforms."
+    "External links are hidden when embedded by game platforms.",
+    "A separate clean portal ZIP is available for portals that reject third-party ad SDKs, external links, or remote telemetry."
   ],
   "manualGates": [
     "Developer dashboard signup, email verification, CAPTCHA, legal consent, and payout setup still require the account owner.",

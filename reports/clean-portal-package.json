@@ -1,0 +1,72 @@
+{
+  "generatedAt": "2026-06-02T16:16:03.083Z",
+  "game": "Upload Limit Panic",
+  "status": "passed",
+  "buildDir": "dist-portal-clean",
+  "zipPackage": "reports\\upload-limit-panic-portal-clean.zip",
+  "tarGzPackage": "reports\\upload-limit-panic-portal-clean.tar.gz",
+  "zipBytes": 32694,
+  "tarGzBytes": 9129,
+  "files": [
+    "build-info.json",
+    "game.js",
+    "icon.svg",
+    "index.html",
+    "manifest.webmanifest",
+    "platform.js",
+    "styles.css"
+  ],
+  "intendedFor": [
+    "Kongregate-style portals that reject third-party advertising inside uploaded games.",
+    "Feedback portals where a clean static package is safer than an ad-SDK package.",
+    "Manual email submissions that ask for a playable ZIP without monetization SDKs."
+  ],
+  "checks": [
+    {
+      "id": "no_external_sdk_urls",
+      "passed": true,
+      "evidence": "No third-party game/ad provider URL or provider string remains."
+    },
+    {
+      "id": "no_remote_tracking",
+      "passed": true,
+      "evidence": "No remote metrics or server API calls remain."
+    },
+    {
+      "id": "no_external_hrefs",
+      "passed": true,
+      "evidence": "No external hyperlinks remain in the uploaded game package."
+    },
+    {
+      "id": "no_ad_runtime_calls",
+      "passed": true,
+      "evidence": "No ad runtime calls remain in clean game logic."
+    },
+    {
+      "id": "index_at_root",
+      "passed": true,
+      "evidence": "index.html is at the archive root."
+    },
+    {
+      "id": "static_small_package",
+      "passed": true,
+      "evidence": "Clean ZIP is below 750KB."
+    },
+    {
+      "id": "clean_build_text",
+      "passed": true,
+      "evidence": "Clean portal disclosure is visible."
+    },
+    {
+      "id": "local_platform_stub",
+      "passed": true,
+      "evidence": "Platform adapter is a local clean stub."
+    }
+  ],
+  "failures": [],
+  "uploadNotes": [
+    "Use this clean ZIP when a portal bans third-party ad SDKs, sponsorships, external links, account systems, or remote tracking.",
+    "Use the regular platform ZIP only when the portal explicitly asks for its SDK adapter.",
+    "This package contains index.html at the archive root and runs without server calls."
+  ]
+}

@@ -40,6 +40,8 @@ const submission = {
   uploadPackages: {
     distFolder: "dist/",
     itchIoZip: "reports/upload-limit-panic-html5.zip",
+    cleanPortalZip: "reports/upload-limit-panic-portal-clean.zip",
+    releaseCleanPortalZip: "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-portal-clean.zip",
     releaseZip: "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip",
     tarGzFallback: "reports/upload-limit-panic-html5.tar.gz",
   },
@@ -177,6 +179,8 @@ function renderMarkdown(data) {
     "## Upload Packages",
     "",
     ...Object.entries(data.uploadPackages).map(([key, value]) => `- ${key}: ${value}`),
+    "",
+    "Clean portal package: use releaseCleanPortalZip for portals that reject third-party ad SDKs, external links, or remote tracking.",
     "",
   ].join("\n");
 }

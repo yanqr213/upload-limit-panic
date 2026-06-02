@@ -9,6 +9,8 @@ const releaseName = "Upload Limit Panic Platform Submission Pack";
 const reportPath = path.join(root, "reports", "release-assets.json");
 const assets = [
   { file: "reports/upload-limit-panic-html5.zip", label: "HTML5 ZIP package for itch.io and platform upload" },
+  { file: "reports/upload-limit-panic-portal-clean.zip", label: "clean HTML5 ZIP for portals that ban third-party ad SDKs and external links" },
+  { file: "reports/clean-portal-package.json", label: "clean portal package verification and upload notes" },
   { file: "reports/upload-limit-panic-demo.mp4", label: "8-second vertical gameplay demo MP4" },
   { file: "reports/platform-submission.md", label: "copy-ready platform submission notes" },
   { file: "reports/platform-submission.json", label: "machine-readable platform submission fields" },
@@ -117,6 +119,7 @@ function releaseBody() {
     "",
     "Ad safety:",
     "- Standalone build has ads disabled.",
+    "- Clean portal ZIP has no third-party ad SDK, external links, or remote tracking.",
     "- CrazyGames, Yandex, Playgama, GamePix, and GameDistribution SDK hooks are optional and must only be used after platform approval/context.",
     "- No ad-engagement inducement or disguised monetization controls.",
     "- Review-readiness report is included for platform moderation notes.",

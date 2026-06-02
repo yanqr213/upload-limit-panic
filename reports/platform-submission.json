@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T15:32:30.201Z",
+  "generatedAt": "2026-06-02T16:16:02.682Z",
   "game": {
     "title": "Upload Limit Panic",
     "shortDescription": "Sort files into Compress, Convert, Send, or Trash before the upload queue bursts.",
@@ -49,6 +49,8 @@
   "uploadPackages": {
     "distFolder": "dist/",
     "itchIoZip": "reports/upload-limit-panic-html5.zip",
+    "cleanPortalZip": "reports/upload-limit-panic-portal-clean.zip",
+    "releaseCleanPortalZip": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-portal-clean.zip",
     "releaseZip": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip",
     "tarGzFallback": "reports/upload-limit-panic-html5.tar.gz"
   },
