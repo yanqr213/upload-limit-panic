@@ -29,6 +29,7 @@ assert(html.includes("Upload Limit Panic"), "Game name is missing.");
 assert(html.includes("rel=\"canonical\""), "Canonical URL is missing.");
 assert(html.includes("platform.js") && html.includes("game.js"), "Scripts are not loaded.");
 assert(css.includes("@media (max-width: 620px)"), "Mobile layout rules are missing.");
+assert(html.includes("id=\"bestValue\"") && game.includes("localStorage") && game.includes("bestKey"), "Best score loop is missing.");
 assert(game.includes("requestAd(\"rewarded\""), "Rewarded ad hook is missing.");
 assert(game.includes("run_start") && game.includes("run_end"), "Local event hooks are missing.");
 assert(platform.includes("CrazyGames") && platform.includes("onUnavailable"), "Platform adapter is incomplete.");

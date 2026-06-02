@@ -16,6 +16,7 @@
   const comboValue = document.getElementById("comboValue");
   const timeValue = document.getElementById("timeValue");
   const limitValue = document.getElementById("limitValue");
+  const bestValue = document.getElementById("bestValue");
   const currentFileName = document.getElementById("currentFileName");
   const currentFileType = document.getElementById("currentFileType");
   const currentFileSize = document.getElementById("currentFileSize");
@@ -27,6 +28,7 @@
     { id: "send", label: "Send", color: "#4f9f67", key: "3" },
     { id: "trash", label: "Trash", color: "#2f3a45", key: "4" },
   ];
+  const bestKey = "upload-limit-panic-best";
 
   const fileTypes = [
     { ext: "PDF", base: 18, wrong: ["JPG", "PNG", "DOCX"] },
@@ -49,6 +51,7 @@
     uploadLimit: 20,
     queuePressure: 0,
     speed: 1,
+    best: readBestScore(),
     hintUntil: 0,
     current: null,
     particles: [],
@@ -203,17 +206,20 @@
       sorted: state.sorted,
       mistakes: state.mistakes,
     });
+    const best = saveBestScore(state.score);
     showModal(
       "Upload queue closed",
-      state.score >= 3500
+      best.isNew
+        ? "New best score. Replay once more to keep the combo cleaner."
+        : state.score >= 3500
         ? "Strong run. This is good enough for a platform review loop and short demo capture."
         : "The core loop is working. Replay to push combo higher and keep the queue under pressure.",
       "Play again",
       "Practice",
       [
         ["Score", state.score],
+        ["Best", state.best],
         ["Sorted", state.sorted],
-        ["Mistakes", state.mistakes],
       ],
       () => reset(false),
       () => reset(true)
@@ -386,6 +392,7 @@
     comboValue.textContent = `x${state.combo}`;
     timeValue.textContent = String(Math.max(0, Math.ceil(state.timeLeft)));
     limitValue.textContent = `${state.uploadLimit} MB`;
+    bestValue.textContent = String(state.best);
     if (state.current) {
       currentFileName.textContent = state.current.name;
       currentFileType.textContent = state.current.ext;
@@ -399,6 +406,27 @@
     if (file.target === "convert") return "Wrong format";
     if (file.target === "trash") return "Duplicate";
     return "Ready";
+  }
+
+  function readBestScore() {
+    try {
+      return Math.max(0, Number(localStorage.getItem(bestKey) || 0));
+    } catch {
+      return 0;
+    }
+  }
+
+  function saveBestScore(score) {
+    const next = Math.max(state.best, Number(score || 0));
+    const isNew = next > state.best;
+    state.best = next;
+    try {
+      localStorage.setItem(bestKey, String(next));
+    } catch {
+      // Best score is local-only and optional.
+    }
+    updateHud();
+    return { value: next, isNew };
   }
 
   function showModal(title, body, primary, secondary, stats, onPrimary, onSecondary) {
