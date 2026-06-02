@@ -36,6 +36,7 @@ if (!config) {
 }
 
 copyDir(src, out);
+fs.rmSync(path.join(out, "playgama-bridge-config.json"), { force: true });
 writeCleanIndex();
 writeCleanStyles();
 writeCleanPlatform();

@@ -24,10 +24,12 @@ assert(platform.includes("GameplayAPI") && platform.includes("start") && platfor
 assert(platform.includes("showRewardedVideo") && platform.includes("showFullscreenAdv"), "Yandex ad adapter hooks are missing.");
 assert(platform.includes("bridge.initialize") && platform.includes("showRewarded") && platform.includes("showInterstitial"), "Playgama adapter hooks are missing.");
 assert(platform.includes("REWARDED_STATE_CHANGED") && platform.includes("game_ready") && platform.includes("PAUSE_STATE_CHANGED"), "Playgama reward and lifecycle hooks are missing.");
+assert(platform.includes("setMinimumDelayBetweenInterstitial"), "Playgama interstitial spacing hook is missing.");
+assert(platform.includes("storage.get") && platform.includes("storage.set"), "Playgama storage hooks are missing.");
 assert(platform.includes("GamePix.game.ping") && platform.includes("GamePix.game?.gameLoaded"), "GamePix lifecycle hooks are missing.");
 assert(platform.includes("GD_OPTIONS") && platform.includes("gdsdk.showAd") && platform.includes("gd_game_id"), "GameDistribution adapter hooks are missing.");
 assert(platform.includes("SDK_REWARDED_WATCH_COMPLETE"), "GameDistribution rewarded completion hook is missing.");
-assert(platform.includes("adsAllowed") && platform.includes("params.get(\"ads\") === \"1\""), "Ad requests must be explicitly gated.");
+assert(platform.includes("adsAllowed") && platform.includes('params.get("ads") === "0"') && platform.includes('state.provider === "playgama"') && platform.includes('params.get("ads") === "1"'), "Ad requests must stay disabled in standalone hosting while allowing Playgama SDK-context QA.");
 assert(!html.includes("watch ads") && !game.includes("watch ads"), "Build should not contain watch-ad copy.");
 assert(css.includes(".platform-crazygames .external-tool-link"), "CrazyGames context should hide external tool link.");
 assert(css.includes(".platform-yandex .external-tool-link"), "Yandex context should hide external tool link.");

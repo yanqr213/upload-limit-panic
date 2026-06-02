@@ -72,6 +72,7 @@
       state.sdk = window.bridge;
       try {
         await window.bridge.initialize();
+        window.bridge.advertisement?.setMinimumDelayBetweenInterstitial?.(30);
         setupPlaygamaLifecycle();
         state.ready = true;
       } catch (error) {
@@ -453,6 +454,31 @@
     }
   }
 
+  async function getStoredBestScore(key) {
+    await init();
+    if (state.provider !== "playgama" || !state.sdk?.storage?.get) return null;
+    try {
+      const value = await state.sdk.storage.get(key);
+      if (value === null || value === undefined || value === "") return null;
+      return Math.max(0, Number(value) || 0);
+    } catch (error) {
+      console.warn("Playgama storage read failed", error);
+      return null;
+    }
+  }
+
+  async function setStoredBestScore(key, value) {
+    await init();
+    if (state.provider !== "playgama" || !state.sdk?.storage?.set) return false;
+    try {
+      await state.sdk.storage.set(key, String(Math.max(0, Number(value) || 0)));
+      return true;
+    } catch (error) {
+      console.warn("Playgama storage write failed", error);
+      return false;
+    }
+  }
+
   function isCrazyGamesContext() {
     const host = window.location.hostname || "";
     const referrer = document.referrer || "";
@@ -521,7 +547,9 @@
 
   function adsAllowed() {
     const params = new URLSearchParams(window.location.search);
-    return state.ready && params.get("ads") === "1";
+    if (!state.ready || params.get("ads") === "0") return false;
+    if (state.provider === "playgama") return true;
+    return params.get("ads") === "1";
   }
 
   window.UploadLimitPlatform = {
@@ -529,6 +557,8 @@
     requestAd,
     gameplayStart,
     gameplayStop,
+    getStoredBestScore,
+    setStoredBestScore,
     adsAllowed,
     track,
     state,

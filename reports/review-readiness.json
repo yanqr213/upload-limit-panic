@@ -1,11 +1,11 @@
 {
-  "generatedAt": "2026-06-02T16:16:03.661Z",
+  "generatedAt": "2026-06-02T18:03:45.782Z",
   "game": "Upload Limit Panic",
   "liveUrl": "https://upload-limit-panic.pages.dev/",
   "status": "passed",
   "summary": {
-    "checks": 29,
-    "passed": 29,
+    "checks": 30,
+    "passed": 30,
     "failed": 0
   },
   "checks": [
@@ -45,6 +45,11 @@
       "evidence": "Local best-score persistence is present."
     },
     {
+      "id": "platform_best_score_storage",
+      "passed": true,
+      "evidence": "Playgama SDK storage is used for best-score sync with local fallback."
+    },
+    {
       "id": "anonymous_metrics",
       "passed": true,
       "evidence": "Anonymous event telemetry is local-first and API-backed."
@@ -77,7 +82,7 @@
     {
       "id": "standalone_ads_disabled",
       "passed": true,
-      "evidence": "Standalone build does not show ads; platform ads require SDK readiness and ads=1."
+      "evidence": "Standalone hosting keeps ads disabled; Playgama SDK-context ads are allowed for platform QA and other providers require ads=1."
     },
     {
       "id": "no_ad_inducement_copy",
@@ -157,7 +162,7 @@
   ],
   "platformFit": [
     "Zero-domain HTML5 package can be submitted to hosted game portals without buying a domain.",
-    "Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.",
+    "Standalone review build keeps ads disabled; Playgama SDK-context QA can test ads at natural breaks and other providers still require an explicit ad-test flag.",
     "Rewarded assists are optional and only granted after platform reward completion callbacks.",
     "External links are hidden when embedded by game platforms.",
     "A separate clean portal ZIP is available for portals that reject third-party ad SDKs, external links, or remote telemetry."

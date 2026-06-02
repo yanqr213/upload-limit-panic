@@ -75,6 +75,7 @@
   ];
 
   window.UploadLimitPlatform.init();
+  syncPlatformBestScore();
 
   async function reset(practice = false) {
     await requestBreakAd();
@@ -447,8 +448,25 @@
     } catch {
       // Best score is local-only and optional.
     }
+    window.UploadLimitPlatform.setStoredBestScore?.(bestKey, next);
     updateHud();
     return { value: next, isNew };
+  }
+
+  async function syncPlatformBestScore() {
+    try {
+      const stored = await window.UploadLimitPlatform.getStoredBestScore?.(bestKey);
+      if (stored === null || stored === undefined) return;
+      state.best = Math.max(state.best, Number(stored) || 0);
+      try {
+        localStorage.setItem(bestKey, String(state.best));
+      } catch {
+        // Local best-score cache is optional.
+      }
+      updateHud();
+    } catch {
+      // Platform storage is best-effort; local score remains available.
+    }
   }
 
   function showModal(title, body, primary, secondary, stats, onPrimary, onSecondary) {
@@ -521,7 +539,7 @@
     [
       ["Keys", "1-4"],
         ["Goal", "60s"],
-      ["Ads", "Disabled"],
+      ["Ads", "Platform"],
     ],
     () => reset(false),
     () => reset(true)

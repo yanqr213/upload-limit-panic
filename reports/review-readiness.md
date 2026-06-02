@@ -1,13 +1,13 @@
 # Upload Limit Panic Review Readiness
 
-Generated: 2026-06-02T16:16:03.661Z
+Generated: 2026-06-02T18:03:45.782Z
 Status: passed
 Live URL: https://upload-limit-panic.pages.dev/
 
 ## Summary
 
-- Checks: 29
-- Passed: 29
+- Checks: 30
+- Passed: 30
 - Failed: 0
 
 ## Checks
@@ -19,13 +19,14 @@ Live URL: https://upload-limit-panic.pages.dev/
 - PASS keyboard_and_touch_controls: Control copy covers 1 compress, 2 convert, 3 send, 4 trash, Touch.
 - PASS modal_start_flow: Start/restart modal is wired.
 - PASS local_best_score: Local best-score persistence is present.
+- PASS platform_best_score_storage: Playgama SDK storage is used for best-score sync with local fallback.
 - PASS anonymous_metrics: Anonymous event telemetry is local-first and API-backed.
 - PASS no_secret_literals: Source does not contain obvious API keys, account tokens, or payment credentials.
 - PASS no_server_dependency_in_zip: Upload package contains only static dist files.
 - PASS zip_package_small: HTML5 ZIP is present and below the review-size budget.
 - PASS clean_portal_package_passed: Clean portal ZIP passed third-party SDK, remote tracking, external link, and ad-call checks.
 - PASS clean_portal_zip_small: Clean portal ZIP is present and below the review-size budget.
-- PASS standalone_ads_disabled: Standalone build does not show ads; platform ads require SDK readiness and ads=1.
+- PASS standalone_ads_disabled: Standalone hosting keeps ads disabled; Playgama SDK-context ads are allowed for platform QA and other providers require ads=1.
 - PASS no_ad_inducement_copy: Game copy avoids ad-click or watch-ad inducement.
 - PASS platform_external_link_hidden: External CTA is hidden in embedded platform contexts.
 - PASS sdk_adapters_present: CrazyGames, Yandex, Playgama, GamePix, and GameDistribution adapters are present.
@@ -45,7 +46,7 @@ Live URL: https://upload-limit-panic.pages.dev/
 ## Platform Fit
 
 - Zero-domain HTML5 package can be submitted to hosted game portals without buying a domain.
-- Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.
+- Standalone review build keeps ads disabled; Playgama SDK-context QA can test ads at natural breaks and other providers still require an explicit ad-test flag.
 - Rewarded assists are optional and only granted after platform reward completion callbacks.
 - External links are hidden when embedded by game platforms.
 - A separate clean portal ZIP is available for portals that reject third-party ad SDKs, external links, or remote telemetry.

@@ -4,4 +4,6 @@ node_modules/
 .env.*
 reports/*.tar.gz
 reports/*.png
+reports/demo-video-input.txt
+reports/platform-svg/
 dist-portal-clean/

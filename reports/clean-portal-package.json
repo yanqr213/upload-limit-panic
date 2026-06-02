@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-02T16:16:03.083Z",
+  "generatedAt": "2026-06-02T18:03:18.896Z",
   "game": "Upload Limit Panic",
   "status": "passed",
   "buildDir": "dist-portal-clean",
   "zipPackage": "reports\\upload-limit-panic-portal-clean.zip",
   "tarGzPackage": "reports\\upload-limit-panic-portal-clean.tar.gz",
-  "zipBytes": 32694,
-  "tarGzBytes": 9129,
+  "zipBytes": 33307,
+  "tarGzBytes": 9270,
   "files": [
     "build-info.json",
     "game.js",

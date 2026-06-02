@@ -65,13 +65,14 @@ check("canvas_game_surface", src.html.includes("<canvas") && src.game.includes("
 check("keyboard_and_touch_controls", controlsPresent(), `Control copy covers ${config.primaryControls.join(", ")}.`);
 check("modal_start_flow", src.html.includes('role="dialog"') && src.html.includes("modalPrimary") && src.game.includes("reset(false)"), "Start/restart modal is wired.");
 check("local_best_score", src.game.includes("localStorage") && src.game.includes("best"), "Local best-score persistence is present.");
+check("platform_best_score_storage", src.platform.includes("storage.get") && src.platform.includes("storage.set") && src.game.includes("syncPlatformBestScore"), "Playgama SDK storage is used for best-score sync with local fallback.");
 check("anonymous_metrics", src.platform.includes("sendBeacon") && src.platform.includes("/api/event") && src.platform.includes(config.eventKey), "Anonymous event telemetry is local-first and API-backed.");
 check("no_secret_literals", noSecrets(), "Source does not contain obvious API keys, account tokens, or payment credentials.");
 check("no_server_dependency_in_zip", packageHasOnlyStaticFiles(), "Upload package contains only static dist files.");
 check("zip_package_small", zipSmallEnough(), "HTML5 ZIP is present and below the review-size budget.");
 check("clean_portal_package_passed", reports.cleanPackage?.status === "passed", "Clean portal ZIP passed third-party SDK, remote tracking, external link, and ad-call checks.");
 check("clean_portal_zip_small", cleanZipSmallEnough(), "Clean portal ZIP is present and below the review-size budget.");
-check("standalone_ads_disabled", standaloneAdsDisabled(), "Standalone build does not show ads; platform ads require SDK readiness and ads=1.");
+check("standalone_ads_disabled", standaloneAdsDisabled(), "Standalone hosting keeps ads disabled; Playgama SDK-context ads are allowed for platform QA and other providers require ads=1.");
 check("no_ad_inducement_copy", noAdInducement(), "Game copy avoids ad-click or watch-ad inducement.");
 check("platform_external_link_hidden", platformExternalLinksHidden(), "External CTA is hidden in embedded platform contexts.");
 check("sdk_adapters_present", sdkAdaptersPresent(), "CrazyGames, Yandex, Playgama, GamePix, and GameDistribution adapters are present.");
@@ -102,7 +103,7 @@ const report = {
   checks,
   platformFit: [
     "Zero-domain HTML5 package can be submitted to hosted game portals without buying a domain.",
-    "Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.",
+    "Standalone review build keeps ads disabled; Playgama SDK-context QA can test ads at natural breaks and other providers still require an explicit ad-test flag.",
     "Rewarded assists are optional and only granted after platform reward completion callbacks.",
     "External links are hidden when embedded by game platforms.",
     "A separate clean portal ZIP is available for portals that reject third-party ad SDKs, external links, or remote telemetry.",
@@ -164,6 +165,8 @@ function cleanZipSmallEnough() {
 
 function standaloneAdsDisabled() {
   return src.platform.includes("adsAllowed") &&
+    src.platform.includes('params.get("ads") === "0"') &&
+    src.platform.includes('state.provider === "playgama"') &&
     src.platform.includes('params.get("ads") === "1"') &&
     src.html.includes("Ads are disabled") &&
     src.game.includes('requestAd("rewarded"') &&
