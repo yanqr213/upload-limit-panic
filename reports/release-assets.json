@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-01T23:57:22.931Z",
+  "generatedAt": "2026-06-02T15:35:14.167Z",
   "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   "tag": "platform-submission-v1",
   "assets": [
     {
       "name": "upload-limit-panic-html5.zip",
       "label": "HTML5 ZIP package for itch.io and platform upload",
-      "size": 39848,
+      "size": 51865,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip"
     },
     {
@@ -18,14 +18,32 @@
     {
       "name": "platform-submission.md",
       "label": "copy-ready platform submission notes",
-      "size": 2358,
+      "size": 2445,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.md"
     },
     {
       "name": "platform-submission.json",
       "label": "machine-readable platform submission fields",
-      "size": 5575,
+      "size": 7916,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission.json"
+    },
+    {
+      "name": "platform-submission-copy.md",
+      "label": "field-by-field copy pack for CrazyGames, Yandex Games, and itch.io",
+      "size": 25371,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy.md"
+    },
+    {
+      "name": "platform-submission-copy.json",
+      "label": "machine-readable submission copy pack",
+      "size": 28149,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy.json"
+    },
+    {
+      "name": "platform-submission-copy-verification.json",
+      "label": "submission copy safety and completeness verification",
+      "size": 88,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy-verification.json"
     },
     {
       "name": "upload-limit-panic-icon-512.png",
@@ -54,7 +72,7 @@
     {
       "name": "crazygames-verification.json",
       "label": "CrazyGames Basic Launch readiness checks",
-      "size": 433,
+      "size": 706,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/crazygames-verification.json"
     },
     {
@@ -66,7 +84,7 @@
     {
       "name": "smoke.json",
       "label": "browser smoke verification",
-      "size": 349,
+      "size": 345,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
     }
   ]
