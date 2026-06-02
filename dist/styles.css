@@ -324,7 +324,10 @@ h1 {
 }
 
 .platform-crazygames .external-tool-link,
-.platform-yandex .external-tool-link {
+.platform-yandex .external-tool-link,
+.platform-playgama .external-tool-link,
+.platform-gamepix .external-tool-link,
+.platform-gamedistribution .external-tool-link {
   display: none;
 }
 

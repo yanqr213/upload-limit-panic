@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T00:55:49.823Z",
+  "generatedAt": "2026-06-02T15:32:30.598Z",
   "goal": "Zero-domain, zero-upfront-cost HTML5 platform submission pack for ad-revenue validation.",
   "noDomainDecision": {
     "immediate": [
@@ -91,7 +91,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },
@@ -120,7 +120,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },
@@ -149,7 +149,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },
@@ -178,7 +178,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },
@@ -207,7 +207,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },
@@ -236,7 +236,7 @@
         "icon512": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-icon-512.png",
         "cover16x9": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-cover-16x9.png",
         "demoVideo": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-demo.mp4",
-        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+        "sdkAndAdsNote": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
         "complianceNote": "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required."
       }
     },

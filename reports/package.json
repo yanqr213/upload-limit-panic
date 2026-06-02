@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-02T00:55:49.617Z",
+  "generatedAt": "2026-06-02T15:32:30.412Z",
   "tarGzPackage": "reports\\upload-limit-panic-html5.tar.gz",
   "zipPackage": "reports\\upload-limit-panic-html5.zip",
-  "tarGzBytes": 10898,
-  "zipBytes": 40767,
+  "tarGzBytes": 12886,
+  "zipBytes": 51865,
   "files": [
     "build-info.json",
     "game.js",

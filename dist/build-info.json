@@ -1,8 +1,12 @@
 {
   "name": "Upload Limit Panic",
-  "generatedAt": "2026-06-02T00:36:15.083Z",
+  "generatedAt": "2026-06-02T15:31:22.667Z",
   "platformTargets": [
     "CrazyGames HTML5",
+    "Yandex Games HTML5",
+    "Playgama Bridge",
+    "GamePix HTML5",
+    "GameDistribution HTML5",
     "itch.io HTML5",
     "static hosting",
     "future Douyin mini-game port"

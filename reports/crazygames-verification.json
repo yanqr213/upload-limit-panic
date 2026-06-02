@@ -1,11 +1,17 @@
 {
-  "generatedAt": "2026-06-02T00:36:15.789Z",
+  "generatedAt": "2026-06-02T15:31:23.275Z",
   "status": "passed",
   "checks": [
     "CrazyGames SDK v3 dynamic loader",
     "Yandex Games SDK dynamic loader",
+    "Playgama Bridge dynamic loader",
+    "GamePix SDK dynamic loader",
+    "GameDistribution SDK dynamic loader",
     "loading/gameplay lifecycle hooks",
     "Yandex LoadingAPI and GameplayAPI hooks",
+    "Playgama rewarded completion and lifecycle hooks",
+    "GamePix lifecycle/ping hooks",
+    "GameDistribution gameId, pause, resume, and rewarded hooks",
     "explicit ad gating",
     "no watch-ad copy in Basic Launch build",
     "external link hidden in platform contexts",

@@ -9,7 +9,7 @@ copyDir(src, dist);
 fs.writeFileSync(path.join(dist, "build-info.json"), `${JSON.stringify({
   name: "Upload Limit Panic",
   generatedAt: new Date().toISOString(),
-  platformTargets: ["CrazyGames HTML5", "itch.io HTML5", "static hosting", "future Douyin mini-game port"],
+  platformTargets: ["CrazyGames HTML5", "Yandex Games HTML5", "Playgama Bridge", "GamePix HTML5", "GameDistribution HTML5", "itch.io HTML5", "static hosting", "future Douyin mini-game port"],
   ads: "Rewarded and midgame ad hooks are adapter-only; no ads are forced in the standalone build.",
 }, null, 2)}\n`);
 

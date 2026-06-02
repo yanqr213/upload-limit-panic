@@ -1,5 +1,5 @@
 {
-  "generatedAt": "2026-06-02T00:55:49.384Z",
+  "generatedAt": "2026-06-02T15:32:30.201Z",
   "game": {
     "title": "Upload Limit Panic",
     "shortDescription": "Sort files into Compress, Convert, Send, or Trash before the upload queue bursts.",
@@ -38,7 +38,7 @@
   },
   "monetization": {
     "currentState": "Standalone build has ads disabled.",
-    "intendedPlatformAds": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
+    "intendedPlatformAds": "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
     "adSafety": [
       "No forced ad wall in the standalone build.",
       "No ad-engagement inducement copy.",
@@ -82,6 +82,36 @@
         "Standalone build does not request ads.",
         "External tool CTA is hidden in platform contexts.",
         "The package is self-contained and uses relative local asset paths."
+      ]
+    },
+    "playgama": {
+      "name": "Upload Limit Panic",
+      "description": "A fast file-sorting arcade game with touch-friendly controls, clear feedback, and natural game-over ad break placement.",
+      "monetizationNote": "Playgama Bridge is dynamically loaded only in Playgama context. The build sends game_ready, level_started, and level_completed messages, listens for pause/audio state changes, and grants rewarded benefits only after REWARDED_STATE_CHANGED reports rewarded.",
+      "complianceNotes": [
+        "No start-of-game interstitial is requested through Playgama.",
+        "Interstitial requests are reserved for natural replay/practice breaks.",
+        "External tool CTA is hidden in Playgama context."
+      ]
+    },
+    "gamePix": {
+      "name": "Upload Limit Panic",
+      "description": "A lightweight HTML5 sorting arcade game with a familiar upload-limit theme, local best score, and mobile-friendly controls.",
+      "monetizationNote": "GamePix SDK is dynamically loaded only in GamePix context. The build wires gameLoading, gameLoaded, pause/resume callbacks, and GamePix.game.ping on run end. No guessed GamePix ad method is called outside documented lifecycle hooks.",
+      "complianceNotes": [
+        "Standalone build does not request ads.",
+        "External tool CTA is hidden in GamePix context.",
+        "Score and run-end events are local/aggregate only; no personal data is collected."
+      ]
+    },
+    "gameDistribution": {
+      "name": "Upload Limit Panic",
+      "description": "A compact HTML5 sorting game with a clear start/replay flow suitable for GameDistribution pre-roll and mid-roll review.",
+      "monetizationNote": "GameDistribution SDK is dynamically loaded only in GameDistribution context or when a gd_game_id is supplied. The build defines GD_OPTIONS, handles SDK_GAME_PAUSE/SDK_GAME_START, tracks SDK_REWARDED_WATCH_COMPLETE before granting rewards, and calls gdsdk.showAd only when ads=1 is present.",
+      "complianceNotes": [
+        "GameId remains dashboard-provided; no fake placeholder is hardcoded.",
+        "Ad calls are tied to user-triggered start/replay/practice or optional hint actions.",
+        "External tool CTA is hidden in GameDistribution context."
       ]
     },
     "itchIo": {

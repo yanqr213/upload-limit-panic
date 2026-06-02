@@ -1,6 +1,6 @@
 # Upload Limit Panic Platform Submission
 
-Generated: 2026-06-02T00:55:49.384Z
+Generated: 2026-06-02T15:32:30.201Z
 
 ## Game
 
@@ -27,7 +27,7 @@ Release pack: https://github.com/yanqr213/upload-limit-panic/releases/tag/platfo
 
 Standalone build has ads disabled.
 
-Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.
+Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames, Yandex, Playgama, GamePix, and GameDistribution integrations are gated behind platform context checks; ad calls also require an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.
 
 - No forced ad wall in the standalone build.
 - No ad-engagement inducement copy.

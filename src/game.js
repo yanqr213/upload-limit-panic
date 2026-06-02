@@ -56,6 +56,7 @@
     current: null,
     particles: [],
     lastTick: 0,
+    platformPaused: false,
   };
 
   const names = [
@@ -75,9 +76,11 @@
 
   window.UploadLimitPlatform.init();
 
-  function reset(practice = false) {
+  async function reset(practice = false) {
+    await requestBreakAd();
     state.running = true;
     state.paused = false;
+    state.platformPaused = false;
     state.over = false;
     state.score = 0;
     state.combo = 1;
@@ -224,6 +227,25 @@
       () => reset(false),
       () => reset(true)
     );
+  }
+
+  async function requestBreakAd() {
+    if (!window.UploadLimitPlatform.adsAllowed()) return false;
+    const provider = window.UploadLimitPlatform.state.provider;
+    const firstStart = !state.over && state.score === 0;
+    if (firstStart && provider !== "gamedistribution") return false;
+    state.paused = true;
+    await window.UploadLimitPlatform.requestAd("interstitial", {
+      onUnavailable: () => {},
+      onError: () => {},
+    });
+    state.paused = false;
+    return false;
+  }
+
+  function setPlatformPaused(paused) {
+    state.platformPaused = paused;
+    state.paused = paused;
   }
 
   function draw(now) {
@@ -477,8 +499,6 @@
     return values[Math.floor(Math.random() * values.length)];
   }
 
-  modalPrimary.addEventListener("click", () => reset(false));
-  modalSecondary.addEventListener("click", () => reset(true));
   startButton.addEventListener("click", () => reset(false));
   restartButton.addEventListener("click", () => reset(false));
   hintButton.addEventListener("click", useHint);
@@ -490,6 +510,8 @@
     if (event.key.toLowerCase() === "h") useHint();
     if (event.key === "Enter" && !state.running) reset(false);
   });
+  window.addEventListener("ulp:platform-pause", () => setPlatformPaused(true));
+  window.addEventListener("ulp:platform-resume", () => setPlatformPaused(false));
 
   showModal(
     "Upload queue ready",
