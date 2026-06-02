@@ -12,16 +12,18 @@ const assets = [
   { file: "reports/upload-limit-panic-demo.mp4", label: "8-second vertical gameplay demo MP4" },
   { file: "reports/platform-submission.md", label: "copy-ready platform submission notes" },
   { file: "reports/platform-submission.json", label: "machine-readable platform submission fields" },
-  { file: "reports/platform-submission-copy.md", label: "field-by-field copy pack for CrazyGames, Yandex Games, and itch.io" },
+  { file: "reports/platform-submission-copy.md", label: "field-by-field copy pack for CrazyGames, Yandex Games, Playgama, GamePix, GameDistribution, and fallback portals" },
   { file: "reports/platform-submission-copy.json", label: "machine-readable submission copy pack" },
   { file: "reports/platform-submission-copy-verification.json", label: "submission copy safety and completeness verification" },
   { file: "reports/upload-limit-panic-icon-512.png", label: "512x512 platform icon" },
   { file: "reports/upload-limit-panic-cover-16x9.png", label: "1280x720 platform cover image" },
   { file: "reports/upload-limit-panic-social-card.png", label: "1200x630 social preview card" },
   { file: "reports/platform-assets.json", label: "platform image asset manifest" },
-  { file: "reports/crazygames-verification.json", label: "CrazyGames Basic Launch readiness checks" },
+  { file: "reports/crazygames-verification.json", label: "multi-platform SDK and ad-safety readiness checks" },
   { file: "reports/analytics-verification.json", label: "anonymous gameplay metrics verification" },
   { file: "reports/smoke.json", label: "browser smoke verification" },
+  { file: "reports/review-readiness.md", label: "human-readable platform review readiness report" },
+  { file: "reports/review-readiness.json", label: "machine-readable platform review readiness report" },
 ];
 
 if (!token) {
@@ -115,8 +117,9 @@ function releaseBody() {
     "",
     "Ad safety:",
     "- Standalone build has ads disabled.",
-    "- CrazyGames and Yandex SDK hooks are optional and must only be used after platform approval.",
+    "- CrazyGames, Yandex, Playgama, GamePix, and GameDistribution SDK hooks are optional and must only be used after platform approval/context.",
     "- No ad-engagement inducement or disguised monetization controls.",
+    "- Review-readiness report is included for platform moderation notes.",
     "",
   ].join("\n");
 }

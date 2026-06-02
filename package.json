@@ -11,6 +11,7 @@
     "verify:crazygames": "node scripts/verify-crazygames.cjs",
     "verify:assets": "node scripts/verify-platform-assets.cjs",
     "verify:submission": "node scripts/verify-submission-copy.cjs",
+    "review:readiness": "node scripts/review-readiness.cjs",
     "smoke": "node scripts/smoke.cjs",
     "submission": "node scripts/submission.cjs",
     "submission:copy": "node scripts/submission-copy.cjs",

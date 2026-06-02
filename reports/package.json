@@ -1,9 +1,9 @@
 {
-  "generatedAt": "2026-06-02T15:32:30.412Z",
+  "generatedAt": "2026-06-02T15:56:32.264Z",
   "tarGzPackage": "reports\\upload-limit-panic-html5.tar.gz",
   "zipPackage": "reports\\upload-limit-panic-html5.zip",
-  "tarGzBytes": 12886,
-  "zipBytes": 51865,
+  "tarGzBytes": 12882,
+  "zipBytes": 51845,
   "files": [
     "build-info.json",
     "game.js",
@@ -14,9 +14,10 @@
     "styles.css"
   ],
   "uploadNotes": [
-    "For itch.io HTML5, upload the ZIP; it contains index.html at the archive root.",
-    "For CrazyGames, upload the dist contents or ZIP according to the developer dashboard prompt.",
-    "Standalone build has no forced ad display; rewarded hooks are adapter-only.",
-    "Keep screenshots and validation report with the submission."
+    "For hosted HTML5 portals, upload the ZIP; it contains index.html at the archive root and no server dependency.",
+    "Primary queue: CrazyGames, Yandex Games, Playgama, GamePix, then GameDistribution after dashboard gameId/legal gates.",
+    "CrazyGames, Yandex, Playgama, GamePix, and GameDistribution adapters are present but gated to platform contexts.",
+    "Standalone build has no forced ad display; ads require platform SDK readiness plus the explicit ads=1 review flag.",
+    "Attach reports/review-readiness.md or reports/review-readiness.json when a dashboard allows extra review notes."
   ]
 }

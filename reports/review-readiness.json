@@ -1,0 +1,166 @@
+{
+  "generatedAt": "2026-06-02T16:02:44.565Z",
+  "game": "Upload Limit Panic",
+  "liveUrl": "https://upload-limit-panic.pages.dev/",
+  "status": "passed",
+  "summary": {
+    "checks": 27,
+    "passed": 27,
+    "failed": 0
+  },
+  "checks": [
+    {
+      "id": "live_canonical_url",
+      "passed": true,
+      "evidence": "Canonical points to https://upload-limit-panic.pages.dev/."
+    },
+    {
+      "id": "dist_built",
+      "passed": true,
+      "evidence": "Build output contains index, styles, platform adapter, and game script."
+    },
+    {
+      "id": "viewport_ready",
+      "passed": true,
+      "evidence": "Mobile viewport and responsive CSS are present."
+    },
+    {
+      "id": "canvas_game_surface",
+      "passed": true,
+      "evidence": "Canvas game loop is present."
+    },
+    {
+      "id": "keyboard_and_touch_controls",
+      "passed": true,
+      "evidence": "Control copy covers 1 compress, 2 convert, 3 send, 4 trash, Touch."
+    },
+    {
+      "id": "modal_start_flow",
+      "passed": true,
+      "evidence": "Start/restart modal is wired."
+    },
+    {
+      "id": "local_best_score",
+      "passed": true,
+      "evidence": "Local best-score persistence is present."
+    },
+    {
+      "id": "anonymous_metrics",
+      "passed": true,
+      "evidence": "Anonymous event telemetry is local-first and API-backed."
+    },
+    {
+      "id": "no_secret_literals",
+      "passed": true,
+      "evidence": "Source does not contain obvious API keys, account tokens, or payment credentials."
+    },
+    {
+      "id": "no_server_dependency_in_zip",
+      "passed": true,
+      "evidence": "Upload package contains only static dist files."
+    },
+    {
+      "id": "zip_package_small",
+      "passed": true,
+      "evidence": "HTML5 ZIP is present and below the review-size budget."
+    },
+    {
+      "id": "standalone_ads_disabled",
+      "passed": true,
+      "evidence": "Standalone build does not show ads; platform ads require SDK readiness and ads=1."
+    },
+    {
+      "id": "no_ad_inducement_copy",
+      "passed": true,
+      "evidence": "Game copy avoids ad-click or watch-ad inducement."
+    },
+    {
+      "id": "platform_external_link_hidden",
+      "passed": true,
+      "evidence": "External CTA is hidden in embedded platform contexts."
+    },
+    {
+      "id": "sdk_adapters_present",
+      "passed": true,
+      "evidence": "CrazyGames, Yandex, Playgama, GamePix, and GameDistribution adapters are present."
+    },
+    {
+      "id": "platform_lifecycle_hooks",
+      "passed": true,
+      "evidence": "Loading, gameplay start/stop, pause/resume, and ready lifecycle hooks are present."
+    },
+    {
+      "id": "rewarded_ads_safe",
+      "passed": true,
+      "evidence": "Rewarded benefits require provider completion callbacks before granting assist rewards."
+    },
+    {
+      "id": "gamedistribution_game_id_gate",
+      "passed": true,
+      "evidence": "GameDistribution requires dashboard gameId or query parameter."
+    },
+    {
+      "id": "smoke_report_passed",
+      "passed": true,
+      "evidence": "Browser smoke report passed."
+    },
+    {
+      "id": "screenshots_exist",
+      "passed": true,
+      "evidence": "Desktop and mobile smoke screenshots exist and are non-empty."
+    },
+    {
+      "id": "canvas_nonblank_evidence",
+      "passed": true,
+      "evidence": "Smoke sampled nonblank canvas pixels."
+    },
+    {
+      "id": "verification_report_passed",
+      "passed": true,
+      "evidence": "General verification report passed."
+    },
+    {
+      "id": "platform_sdk_report_passed",
+      "passed": true,
+      "evidence": "Platform SDK verification report passed."
+    },
+    {
+      "id": "analytics_report_passed",
+      "passed": true,
+      "evidence": "Analytics verification report passed."
+    },
+    {
+      "id": "asset_report_passed",
+      "passed": true,
+      "evidence": "Platform icon, cover, and social assets passed verification."
+    },
+    {
+      "id": "release_assets_include_zip",
+      "passed": true,
+      "evidence": "GitHub release includes the HTML5 ZIP asset."
+    },
+    {
+      "id": "release_assets_include_demo",
+      "passed": true,
+      "evidence": "GitHub release includes the gameplay demo MP4."
+    }
+  ],
+  "platformFit": [
+    "Zero-domain HTML5 package can be submitted to hosted game portals without buying a domain.",
+    "Standalone review build keeps ads disabled and uses platform adapters only inside platform contexts.",
+    "Rewarded assists are optional and only granted after platform reward completion callbacks.",
+    "External links are hidden when embedded by game platforms."
+  ],
+  "manualGates": [
+    "Developer dashboard signup, email verification, CAPTCHA, legal consent, and payout setup still require the account owner.",
+    "Platform acceptance, ad eligibility, real plays, and verified revenue are the money gate.",
+    "Do not send bank, Alipay, API token, or private credential details by email."
+  ],
+  "nextSubmissionOrder": [
+    "CrazyGames",
+    "Yandex Games",
+    "Playgama",
+    "GamePix",
+    "GameDistribution"
+  ]
+}

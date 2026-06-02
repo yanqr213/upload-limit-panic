@@ -27,10 +27,11 @@ const manifest = {
   zipBytes: fs.statSync(zipOutput).size,
   files: files.map((file) => file.replaceAll("\\", "/")),
   uploadNotes: [
-    "For itch.io HTML5, upload the ZIP; it contains index.html at the archive root.",
-    "For CrazyGames, upload the dist contents or ZIP according to the developer dashboard prompt.",
-    "Standalone build has no forced ad display; rewarded hooks are adapter-only.",
-    "Keep screenshots and validation report with the submission.",
+    "For hosted HTML5 portals, upload the ZIP; it contains index.html at the archive root and no server dependency.",
+    "Primary queue: CrazyGames, Yandex Games, Playgama, GamePix, then GameDistribution after dashboard gameId/legal gates.",
+    "CrazyGames, Yandex, Playgama, GamePix, and GameDistribution adapters are present but gated to platform contexts.",
+    "Standalone build has no forced ad display; ads require platform SDK readiness plus the explicit ads=1 review flag.",
+    "Attach reports/review-readiness.md or reports/review-readiness.json when a dashboard allows extra review notes.",
   ],
 };
 fs.writeFileSync(path.join(reports, "package.json"), `${JSON.stringify(manifest, null, 2)}\n`);
