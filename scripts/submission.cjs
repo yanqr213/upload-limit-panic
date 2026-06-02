@@ -29,10 +29,10 @@ const submission = {
   monetization: {
     currentState: "Standalone build has ads disabled.",
     intendedPlatformAds:
-      "Rewarded ads may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex ad calls are gated behind an explicit ads flag in the review build. No gameplay button is disguised as an ad, and no user is asked to click ads.",
+      "Rewarded placements may be used only for optional hints, retry, revive, or bonus time after platform approval. CrazyGames and Yandex calls are gated behind an explicit ads flag in the review build. Gameplay buttons are never disguised as monetization controls.",
     adSafety: [
       "No forced ad wall in the standalone build.",
-      "No ad-click inducement copy.",
+      "No ad-engagement inducement copy.",
       "No external cash or prize reward for ad viewing.",
       "No false claims about guaranteed upload acceptance or compression results.",
     ],

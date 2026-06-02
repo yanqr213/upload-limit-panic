@@ -14,8 +14,8 @@ let pack = null;
 if (!failures.length) {
   pack = JSON.parse(fs.readFileSync(copyPath, "utf8"));
   const md = fs.readFileSync(mdPath, "utf8");
-  assert(Array.isArray(pack.platforms) && pack.platforms.length >= 3, "Copy pack should include at least three platform routes.");
-  for (const platformName of ["CrazyGames", "Yandex Games", "itch.io"]) {
+  assert(Array.isArray(pack.platforms) && pack.platforms.length >= 9, "Copy pack should include the expanded platform routes.");
+  for (const platformName of ["CrazyGames", "Yandex Games", "Playgama", "GamePix", "Lagged", "GameFlare", "GameDistribution", "Poki", "itch.io"]) {
     assert(pack.platforms.some((item) => item.platform === platformName), `Copy pack missing ${platformName}.`);
     assert(md.includes(`##`) && md.includes(platformName), `Markdown missing ${platformName}.`);
   }

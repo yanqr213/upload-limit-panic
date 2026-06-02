@@ -1,8 +1,8 @@
 {
-  "generatedAt": "2026-06-02T00:36:18.914Z",
+  "generatedAt": "2026-06-02T00:55:49.617Z",
   "tarGzPackage": "reports\\upload-limit-panic-html5.tar.gz",
   "zipPackage": "reports\\upload-limit-panic-html5.zip",
-  "tarGzBytes": 10897,
+  "tarGzBytes": 10898,
   "zipBytes": 40767,
   "files": [
     "build-info.json",

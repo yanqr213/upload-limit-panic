@@ -116,7 +116,7 @@ function releaseBody() {
     "Ad safety:",
     "- Standalone build has ads disabled.",
     "- CrazyGames and Yandex SDK hooks are optional and must only be used after platform approval.",
-    "- No ad-click inducement or disguised ad buttons.",
+    "- No ad-engagement inducement or disguised monetization controls.",
     "",
   ].join("\n");
 }

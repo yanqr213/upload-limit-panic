@@ -23,16 +23,25 @@ const copyPack = {
     immediate: [
       "Submit to CrazyGames first because it has a self-serve developer portal, platform-hosted distribution, SDK-based ads, and payout setup through Tipalti after revenue eligibility.",
       "Submit to Yandex Games second because it supports platform catalog discovery, SDK-based ad monetization, and publisher-console metrics.",
+      "Submit to Playgama and GamePix after the first two direct platforms because both can distribute HTML5 games without a custom domain.",
+      "Use Lagged and GameFlare as secondary tests if primary moderation or account setup stalls.",
       "Publish an itch.io mirror only as a free browser-play backup and feedback surface, not as the main advertising route.",
     ],
     parked: [
-      "GameDistribution can be evaluated after the first two platforms because it is a revenue-share distributor, but it adds another SDK and lower control over downstream portals.",
+      "GameDistribution can be evaluated after the first four platforms because it is a revenue-share distributor, but it adds another SDK and lower control over downstream portals.",
+      "Poki is high-upside but later because it may require web-exclusive partnership terms and a stricter quality bar.",
       "Douyin and Bilibili mini-game routes are not first because they require extra platform accounts, local mini-game packaging, domestic compliance review, and more account-side setup.",
     ],
   },
   platforms: [
     crazyGamesCopy(),
     yandexGamesCopy(),
+    genericPlatformCopy("Playgama", 3, "https://developer.playgama.com/", "Playgama can distribute approved HTML5 games through partner platforms and supports ad/IAP monetization after its SDK or Bridge requirements are met.", "Developer account is required. Add Playgama Bridge only after the portal requests it."),
+    genericPlatformCopy("GamePix", 4, "https://partners.gamepix.com/developers", "GamePix is a secondary distribution and hosting candidate with a published developer revenue-share model.", "Developer dashboard and SDK review are required before monetization."),
+    genericPlatformCopy("Lagged", 5, "https://lagged.dev/", "Lagged is a simple HTML5 submission candidate with advertised revenue share through its developer dashboard.", "Submit only the ad-safe package and avoid ad-engagement inducement copy."),
+    genericPlatformCopy("GameFlare", 6, "https://distribution.gameflare.com/developers/", "GameFlare is a lower-friction review candidate because it can review playable early-access HTML5 builds and monetizes with platform ads.", "Send the playable build or ZIP and keep ads controlled by the platform."),
+    genericPlatformCopy("GameDistribution", 7, "https://gamedistribution.com/developers/", "GameDistribution is a later broad-network distributor candidate that likely needs a platform-specific SDK adapter.", "Do not enable GameDistribution ad calls until a separate adapter is built."),
+    genericPlatformCopy("Poki", 8, "https://developers.poki.com/", "Poki is a later high-upside quality target, not the immediate route, because acceptance and possible web-exclusivity terms are higher friction.", "Do not submit broadly if a web-exclusive deal is required."),
     itchCopy(),
   ],
   assets: assetLinks(),
@@ -47,7 +56,7 @@ const copyPack = {
   validationGate: [
     "Use the HTML5 ZIP with index.html at the archive root.",
     "Keep standalone ads disabled until the platform accepts or requests monetization activation.",
-    "Do not use ad-click inducement copy in titles, buttons, screenshots, or descriptions.",
+    "Do not use ad-engagement inducement copy in titles, buttons, screenshots, or descriptions.",
     "Use platform SDK lifecycle hooks for loading and gameplay state.",
     "Hide external links in CrazyGames and Yandex embedded contexts.",
   ],
@@ -137,6 +146,38 @@ function itchCopy() {
       tags: (game.tags || []).join(", "),
       uploadPackage: packages.itchIoZip,
       coverText: platform.coverText || game.shortDescription,
+    },
+  };
+}
+
+function genericPlatformCopy(platform, priority, submissionUrl, monetizationExpectation, gateNote) {
+  return {
+    platform,
+    priority,
+    submissionUrl,
+    monetizationExpectation,
+    sourceNotes: [
+      gateNote,
+      "Use the current HTML5 ZIP as a review package unless the platform explicitly requests its own SDK wrapper.",
+      "Standalone ads remain disabled; platform ad calls should be added only through a platform-specific adapter after approval.",
+    ],
+    copyFields: {
+      title: game.title,
+      shortDescription: game.shortDescription,
+      longDescription: `${game.longDescription}\n\nThis build is a free browser-play validation package with no login, no in-app purchases, no forced ads, and desktop/mobile controls.`,
+      genre: (game.genre || []).join(", "),
+      tags: (game.tags || []).join(", "),
+      controls: (game.controls || []).join(" "),
+      deviceSupport: (game.platforms || []).join(", "),
+      language: game.language,
+      contentRating: game.contentRating,
+      uploadPackage: packages.releaseZip || packages.itchIoZip,
+      livePreview: game.liveUrl,
+      icon512: releaseAssetUrl(assets.platformIcon) || assets.platformIcon,
+      cover16x9: releaseAssetUrl(assets.platformCover) || assets.platformCover,
+      demoVideo: assets.releaseDemoVideo || assets.demoVideo,
+      sdkAndAdsNote: submission.monetization?.intendedPlatformAds || "",
+      complianceNote: "Ad-safe review build with no fake rewards, no gambling, no personal data collection, and external links hidden in platform contexts where required.",
     },
   };
 }
