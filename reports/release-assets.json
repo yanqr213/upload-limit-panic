@@ -1,12 +1,12 @@
 {
-  "generatedAt": "2026-06-02T15:35:14.167Z",
+  "generatedAt": "2026-06-02T16:04:46.140Z",
   "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   "tag": "platform-submission-v1",
   "assets": [
     {
       "name": "upload-limit-panic-html5.zip",
       "label": "HTML5 ZIP package for itch.io and platform upload",
-      "size": 51865,
+      "size": 51845,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip"
     },
     {
@@ -29,7 +29,7 @@
     },
     {
       "name": "platform-submission-copy.md",
-      "label": "field-by-field copy pack for CrazyGames, Yandex Games, and itch.io",
+      "label": "field-by-field copy pack for CrazyGames, Yandex Games, Playgama, GamePix, GameDistribution, and fallback portals",
       "size": 25371,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/platform-submission-copy.md"
     },
@@ -71,7 +71,7 @@
     },
     {
       "name": "crazygames-verification.json",
-      "label": "CrazyGames Basic Launch readiness checks",
+      "label": "multi-platform SDK and ad-safety readiness checks",
       "size": 706,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/crazygames-verification.json"
     },
@@ -86,6 +86,18 @@
       "label": "browser smoke verification",
       "size": 345,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
+    },
+    {
+      "name": "review-readiness.md",
+      "label": "human-readable platform review readiness report",
+      "size": 3181,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.md"
+    },
+    {
+      "name": "review-readiness.json",
+      "label": "machine-readable platform review readiness report",
+      "size": 5069,
+      "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.json"
     }
   ]
 }
