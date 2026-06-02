@@ -1,18 +1,18 @@
 {
-  "generatedAt": "2026-06-02T16:19:21.383Z",
+  "generatedAt": "2026-06-02T18:05:24.747Z",
   "releaseUrl": "https://github.com/yanqr213/upload-limit-panic/releases/tag/platform-submission-v1",
   "tag": "platform-submission-v1",
   "assets": [
     {
       "name": "upload-limit-panic-html5.zip",
       "label": "HTML5 ZIP package for itch.io and platform upload",
-      "size": 51845,
+      "size": 53632,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-html5.zip"
     },
     {
       "name": "upload-limit-panic-portal-clean.zip",
       "label": "clean HTML5 ZIP for portals that ban third-party ad SDKs and external links",
-      "size": 32694,
+      "size": 33307,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/upload-limit-panic-portal-clean.zip"
     },
     {
@@ -96,19 +96,19 @@
     {
       "name": "smoke.json",
       "label": "browser smoke verification",
-      "size": 346,
+      "size": 348,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/smoke.json"
     },
     {
       "name": "review-readiness.md",
       "label": "human-readable platform review readiness report",
-      "size": 3528,
+      "size": 3737,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.md"
     },
     {
       "name": "review-readiness.json",
       "label": "machine-readable platform review readiness report",
-      "size": 5545,
+      "size": 5816,
       "downloadUrl": "https://github.com/yanqr213/upload-limit-panic/releases/download/platform-submission-v1/review-readiness.json"
     }
   ]
